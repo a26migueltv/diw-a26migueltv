@@ -1,0 +1,179 @@
+:root {
+  --escritorio: #008080; /* Os colores da pag */
+  --gris: #c0c0c0;
+  --luz: #ffffff;
+  --sombra: #808080;
+  --negro: #000000;
+  --azul: #000080;
+  --rojo: #c00000;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: var(--escritorio);
+  font-family: Tahoma, 'MS Sans Serif', Verdana, sans-serif;
+  font-size: 15px;
+}
+
+/* A ventana */
+.ventana {
+  width: min(420px, 92vw);
+  background: var(--gris);
+  /* Bordes en relieve: claro arriba-izquierda, oscuro abajo-derecha */
+  border: 2px solid;
+  border-color: var(--luz) var(--negro) var(--negro) var(--luz);
+  box-shadow: inset -1px -1px 0 var(--sombra);
+}
+
+.titulo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 6px;
+  background: var(--azul);
+  color: var(--luz);
+  font-weight: bold;
+  transition: background 0.3s;
+}
+.cerrar {
+  width: 20px;
+  background: var(--gris);
+  color: var(--negro);
+  text-align: center;
+  border: 2px solid;
+  border-color: var(--luz) var(--negro) var(--negro) var(--luz);
+  font-size: 12px;
+}
+
+.contenido {
+  padding: 16px;
+}
+.archivo {
+  margin: 0 0 12px;
+}
+
+/* A barra de progreso*/
+.progreso {
+  height: 24px;
+  padding: 2px;
+  background: var(--luz);
+  border: 2px solid;
+  border-color: var(--sombra) var(--luz) var(--luz) var(--sombra);
+}
+.relleno {
+  width: 0;
+  height: 100%;
+  /* Formato da barra a bloques */
+  background: repeating-linear-gradient(
+    90deg,
+    var(--azul) 0 12px,
+    transparent 12px 15px
+  );
+  transition: width 0.8s ease;
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 10px 0 16px;
+  min-height: 2.6em;
+}
+
+/* O botón */
+.boton {
+  display: block;
+  margin-left: auto;
+  padding: 6px 24px;
+  background: var(--gris);
+  border: 2px solid;
+  border-color: var(--luz) var(--negro) var(--negro) var(--luz);
+  font: inherit;
+  cursor: pointer;
+}
+.boton:active:not(:disabled) {
+  border-color: var(--negro) var(--luz) var(--luz) var(--negro);
+}
+.boton:disabled {
+  color: var(--sombra);
+  cursor: default;
+}
+.boton:focus-visible {
+  outline: 1px dotted var(--negro);
+  outline-offset: -5px;
+}
+
+/* Animación de pulsado */
+.boton.pulsado {
+  animation: pulsado 0.3s;
+}
+@keyframes pulsado {
+  50% {
+    transform: scale(0.9);
+  }
+}
+
+/* Os estados da ventana */
+
+/* O error falso */
+.ventana.error .titulo {
+  background: var(--rojo);
+}
+.ventana.error .relleno {
+  background: repeating-linear-gradient(
+    90deg,
+    var(--rojo) 0 12px,
+    transparent 12px 15px
+  );
+}
+.ventana.temblor {
+  animation: temblor 0.5s;
+}
+@keyframes temblor {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-10px);
+  }
+  40% {
+    transform: translateX(10px);
+  }
+  60% {
+    transform: translateX(-6px);
+  }
+  80% {
+    transform: translateX(6px);
+  }
+}
+
+/* Animación de salto */
+.ventana.exito {
+  animation: exito 0.6s;
+}
+@keyframes exito {
+  30% {
+    transform: translateY(-20px) rotate(-2deg);
+  }
+  60% {
+    transform: translateY(0) rotate(1deg);
+  }
+  80% {
+    transform: translateY(-6px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

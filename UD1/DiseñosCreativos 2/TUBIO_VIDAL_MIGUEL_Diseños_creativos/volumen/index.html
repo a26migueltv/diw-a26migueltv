@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Volumen</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="panel">
+      <div class="altavoz" id="altavoz">🔉</div>
+      <p class="numero" id="valor">50</p>
+      <div class="barra"><div class="relleno" id="relleno"></div></div>
+
+      <div class="botones">
+        <button
+          class="bajar"
+          id="bajar"
+          type="button"
+          aria-label="Bajar volumen"
+        >
+          −
+        </button>
+        <button
+          class="subir"
+          id="subir"
+          type="button"
+          aria-label="Subir volumen"
+        >
+          +
+        </button>
+      </div>
+
+      <button class="play" id="play" type="button">▶ Reproducir</button>
+      <audio id="musica" src="musica.wav" loop></audio>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

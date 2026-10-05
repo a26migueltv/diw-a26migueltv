@@ -1,0 +1,176 @@
+:root {
+  --cielo: #d7ecf0;
+  --suelo: #eef7e9;
+  --hoja: #3f8f4a;
+  --hoja-clara: #6cc070;
+  --flor: #ef5d9a;
+  --centro: #ffcf3f;
+  --maceta: #b8643a;
+  --maceta-oscura: #8e4524;
+  --tierra: #5a3a22;
+  --tinta: #1f3b2c;
+  --agua: #4aa8e0;
+  --metal: #7fb3c9;
+  --metal-oscuro: #4f8aa3;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(var(--cielo), var(--suelo));
+  font-family: 'Fredoka', system-ui, sans-serif;
+  color: var(--tinta);
+}
+
+button { font: inherit; cursor: pointer; }
+:focus-visible { outline: 3px solid var(--flor); outline-offset: 4px; border-radius: 8px; }
+
+.invernadero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+h1 { margin: 0; font-weight: 600; font-size: clamp(1.5rem, 5vw, 2rem); }
+.instruccion { max-width: 34ch; margin: .5rem 0 1rem; line-height: 1.4; }
+
+/* ---------- Escenario ---------- */
+.jardin {
+  position: relative;
+  width: 300px;
+  height: 340px;
+}
+
+/* ---------- Regadera (el botón) ---------- */
+.regadera {
+  position: absolute;
+  top: 20px; left: 10px;
+  width: 130px;
+  padding: 0;
+  background: none;
+  border: 0;
+  transform-origin: 50% 70%;
+  transition: transform .15s;
+}
+.regadera:hover:not(:disabled) { transform: rotate(-6deg); }
+.regadera:disabled { cursor: default; opacity: .5; }
+.regadera svg { display: block; width: 100%; overflow: visible; }
+.regadera-cuerpo, .regadera-alcachofa { fill: var(--metal); }
+.regadera-asa { fill: none; stroke: var(--metal-oscuro); stroke-width: 7; stroke-linecap: round; }
+.regadera-pitorro { stroke: var(--metal-oscuro); stroke-width: 8; stroke-linecap: round; }
+
+/* Al pulsar: se inclina, riega y vuelve */
+.regadera.regando { animation: regar .8s ease-in-out; }
+@keyframes regar {
+  0%       { transform: rotate(0); }
+  30%, 70% { transform: rotate(35deg); }
+  100%     { transform: rotate(0); }
+}
+
+/* ---------- Gotas ---------- */
+.gotas { position: absolute; inset: 0; pointer-events: none; }
+.gota {
+  position: absolute;
+  width: 8px; height: 12px;
+  background: var(--agua);
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  animation: caer .7s ease-in forwards;
+}
+@keyframes caer {
+  from { transform: translate(0, 0); opacity: 1; }
+  to   { transform: translate(var(--dx), 185px); opacity: .3; }
+}
+
+/* ---------- Planta ---------- */
+.planta {
+  --g: 0;                        /* crecimiento de 0 a 1, lo cambia el JS */
+  position: absolute;
+  bottom: 0; left: 50%;
+  width: 200px; height: 260px;
+  margin-left: -100px;
+  overflow: visible;
+  transform-origin: bottom center;
+  transition: filter .6s;
+}
+
+/* El tallo se "dibuja" con el truco de stroke-dasharray / dashoffset */
+.tallo {
+  fill: none;
+  stroke: var(--hoja);
+  stroke-width: 6;
+  stroke-linecap: round;
+  stroke-dasharray: 1;
+  stroke-dashoffset: calc(1 - var(--g));
+  transition: stroke-dashoffset .6s ease;
+}
+
+.hoja, .capullo, .flor {
+  transform-box: fill-box;
+  transform: scale(0);
+  transition: transform .5s cubic-bezier(.3, 1.6, .5, 1);  /* salen con rebote */
+}
+.hoja { fill: var(--hoja-clara); }
+.hoja--1 { transform-origin: right center; }   /* nace pegada al tallo */
+.hoja--2 { transform-origin: left center; }
+.capullo { fill: var(--hoja); transform-origin: center bottom; }
+.flor { fill: var(--flor); transform-origin: center; transition-duration: .9s; }
+.flor-centro { fill: var(--centro); }
+
+.planta.con-hoja1 .hoja--1,
+.planta.con-hoja2 .hoja--2,
+.planta.con-capullo .capullo { transform: scale(1); }
+.planta.florecida .flor { transform: scale(1) rotate(360deg); }
+
+.maceta { fill: var(--maceta); }
+.maceta-borde { fill: var(--maceta-oscura); }
+.tierra { fill: var(--tierra); }
+
+/* Riego demasiado rápido: la planta se tambalea */
+.planta.ahogada { animation: ahogo .5s; }
+@keyframes ahogo {
+  0%, 100% { transform: rotate(0); }
+  25% { transform: rotate(-5deg); }
+  75% { transform: rotate(5deg); }
+}
+/* Si la dejas sin regar, pierde color */
+.planta.sedienta { filter: saturate(.4) sepia(.3); }
+
+/* ---------- Barra y mensajes ---------- */
+.progreso {
+  width: 300px;
+  max-width: 90vw;
+  height: 12px;
+  margin-top: 1rem;
+  background: #cfe0cf;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.progreso-relleno {
+  width: 0;
+  height: 100%;
+  background: var(--hoja);
+  transition: width .4s ease;
+}
+.estado { min-height: 1.5em; margin: .75rem 0; }
+
+.replantar {
+  padding: .6rem 1.2rem;
+  border: 0;
+  border-radius: 999px;
+  background: var(--hoja);
+  color: #fff;
+  font-weight: 600;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+  }
+}

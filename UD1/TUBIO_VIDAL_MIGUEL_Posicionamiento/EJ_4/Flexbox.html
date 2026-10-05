@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ejercicio 4 - Flexbox</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+      }
+      #contenedor {
+        width: 100%;
+        height: 100vh;
+        padding: 2vh 1.5vw;
+        border: thin dotted black;
+        display: flex;
+      }
+      .fila {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 2vh;
+      }
+      .naranja {
+        background-color: coral;
+        flex: 1;
+      }
+      .azul {
+        background-color: cornflowerblue;
+        flex: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="contenedor">
+      <div class="fila">
+        <div class="naranja"></div>
+      
+      <div class="fila">
+        <div class="azul"></div>
+      </div>
+    </div>
+  </body>
+</html>

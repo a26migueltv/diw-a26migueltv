@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ejercicio 1 - Grid</title>
+    <style>
+      body {
+        margin: 0;
+      }
+      #bandera {
+        width: 100%;
+        height: 100vh;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .azul {
+        background-color: blue;
+      }
+      .blanco {
+        background-color: white;
+      }
+      .rojo {
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="bandera">
+      <div class="azul"></div>
+      <div class="blanco"></div>
+      <div class="rojo"></div>
+    </div>
+  </body>
+</html>

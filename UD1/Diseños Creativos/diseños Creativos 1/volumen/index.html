@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Volumen de la suerte</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Rubik:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="sala">
+    <!-- Cuerpo de la máquina -->
+    <div class="maquina" id="maquina">
+      <h1 class="marquesina" id="marquesina">Volumen de la suerte</h1>
+
+      <!-- Ventana con los tres rodillos: decenas, unidades y modificador -->
+      <div class="ventana">
+        <div class="rodillo"><div class="tira" id="tira0"></div></div>
+        <div class="rodillo"><div class="tira" id="tira1"></div></div>
+        <div class="rodillo rodillo--modificador"><div class="tira" id="tira2"></div></div>
+        <div class="linea-premio"></div>
+      </div>
+
+      <!-- Marcador del volumen actual -->
+      <div class="panel">
+        <div class="marcador">
+          <span class="marcador-texto">Volumen</span>
+          <span class="marcador-valor" id="valor">0</span>
+        </div>
+        <div class="medidor"><div class="medidor-relleno" id="relleno"></div></div>
+      </div>
+
+      <p class="estado" id="estado" aria-live="polite">Inserta una moneda y tira de la palanca.</p>
+
+      <div class="botonera">
+        <button class="ranura" id="ranura" type="button">
+          <span class="moneda" id="moneda"></span>Insertar moneda
+        </button>
+        <span class="creditos" id="creditos">Créditos: 0</span>
+        <button class="probar" id="probar" type="button">Probar sonido</button>
+      </div>
+    </div>
+
+    <!-- Palanca lateral: es el botón que hace girar los rodillos -->
+    <button class="palanca" id="palanca" type="button" aria-label="Tirar de la palanca">
+      <span class="palanca-brazo"><span class="palanca-bola"></span></span>
+      <span class="palanca-base"></span>
+    </button>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

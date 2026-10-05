@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ejercicio 4 - Float</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+      }
+      #contenedor {
+        width: 100%;
+        height: 100vh;
+        border: thin dotted black;
+        padding: 2vh 1.5vw;
+      }
+      .caja {
+        float: left;
+        width: 100%;
+      }
+      .naranja {
+        background-color: coral;
+        height: calc(50% - 1vh);
+        margin-bottom: 2vh;
+      }
+      .azul {
+        background-color: cornflowerblue;
+        height: calc(50% - 1vh);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="contenedor">
+      <div class="caja naranja"></div>
+      <div class="caja azul"></div>
+    </div>
+  </body>
+</html>

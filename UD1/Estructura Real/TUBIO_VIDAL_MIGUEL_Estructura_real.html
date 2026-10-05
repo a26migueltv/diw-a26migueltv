@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Estructura real</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        height: 100vh;
+        display: grid;
+        grid-template-columns: 1fr 2.5fr 1fr;
+        grid-template-rows: 1fr 8fr 1fr;
+        gap: 2vh 1.5vw;
+        grid-template-areas:
+          'cabecera cabecera cabecera'
+          'menu     seccion  lateral'
+          'pie      pie      pie';
+        font-family: Arial, sans-serif;
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: white;
+      }
+
+      body > header {
+        grid-area: cabecera;
+      }
+      nav {
+        grid-area: menu;
+      }
+      section {
+        grid-area: seccion;
+      }
+      aside {
+        grid-area: lateral;
+      }
+      body > footer {
+        grid-area: pie;
+      }
+
+      body > header,
+      nav,
+      section,
+      aside,
+      body > footer {
+        background-color: indianred;
+      }
+
+      section {
+        display: grid;
+        grid-template-rows: auto 1fr 4fr 1.5fr;
+        gap: 2vh;
+        padding: 1vh 1.5vw 2vh;
+      }
+      section > header,
+      article,
+      section > footer {
+        background-color: darkkhaki;
+      }
+
+      body > header,
+      nav,
+      aside,
+      body > footer,
+      section > header,
+      article,
+      section > footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      h2,
+      h3 {
+        margin: 0;
+        font-size: inherit;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <header>&lt;header&gt;</header>
+    <nav>&lt;nav&gt;</nav>
+    <section>
+      <h2>&lt;section&gt;</h2>
+      <header>&lt;header&gt;</header>
+      <article><h3>&lt;article&gt;</h3></article>
+      <footer>&lt;footer&gt;</footer>
+    </section>
+    <aside>&lt;aside&gt;</aside>
+    <footer>&lt;footer&gt;</footer>
+  </body>
+</html>

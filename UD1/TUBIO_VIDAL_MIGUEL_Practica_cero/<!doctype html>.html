@@ -1,0 +1,88 @@
+<!doctype html> 
+<html> 
+    <head> <meta charset="utf-8"> 
+    <title>Prueba 0</title>
+
+</head> 
+<body>
+<h1>Prueba 0</h1>
+<h2>Esta é a ventana modal da prueba 0</h2>
+
+<button onclick="abrir()">Abrir ventana</button>
+
+<div id="ventana">
+
+    <div id="cabecera">
+        <span id="cerrar" onclick="cerrar()">×</span>
+        <center>A Ventana</center>
+    </div>
+
+    <div id="contenido">
+        <p>Unha ventana modal.</p>
+    </div>
+
+</div>
+    <!-- Con esto se hace la funcionalidad 
+     de la ventana (abrir, cerrar y el botón)-->
+<script>
+    let ventana = document.getElementById("ventana");
+    let cabecera = document.getElementById("cabecera");
+
+    function abrir() {
+        ventana.style.display = "block";
+        ventana.style.left = "40%";
+        ventana.style.top = "30%";
+    }
+
+    function cerrar() {
+        ventana.style.display = "none";
+    }
+
+    cabecera.onmousedown = function(e) {
+
+        let x = e.clientX - ventana.offsetLeft;
+        let y = e.clientY - ventana.offsetTop;
+
+        document.onmousemove = function(e) {
+            ventana.style.left = (e.clientX - x) + "px";
+            ventana.style.top = (e.clientY - y) + "px";
+        };
+
+        document.onmouseup = function() {
+            document.onmousemove = null;
+        };
+    };
+ 
+</script>
+<!-- Con esto se ven los colores y el formato de la ventana-->
+<style>
+    #ventana {
+        display: none;
+        position: absolute;
+        width: 400px;
+        background: white;
+        border: 1px solid black;
+    }
+
+    #cabecera {
+        background: greenyellow;
+        color: black;
+        padding: 10px;
+        cursor: move;
+    }
+
+    #cerrar {
+        float: left;
+        cursor: pointer;
+        font-size: 20px;
+    }
+
+    #contenido {
+        padding: 20px;
+    }
+</style>
+
+
+</body> 
+
+</html>

@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ejercicio 5 - Grid</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+      }
+      #contenedor {
+        width: 100%;
+        height: 100vh;
+        padding: 2vh 1.5vw;
+        display: grid;
+        grid-template-columns: 144fr 228fr 210fr;
+        grid-template-rows: 128fr 113fr 75fr 90fr 61fr;
+        gap: 2vh 1.5vw;
+        grid-template-areas:
+          'menta   menta   verde'
+          'menta   menta   azul'
+          'rojo    magenta azul'
+          'naranja magenta azul'
+          'naranja magenta marron';
+      }
+      .menta {
+        background-color: #50edab;
+        grid-area: menta;
+      }
+      .verde {
+        background-color: #3b7700;
+        grid-area: verde;
+      }
+      .azul {
+        background-color: #0050a0;
+        grid-area: azul;
+      }
+      .marron {
+        background-color: #c9a063;
+        grid-area: marron;
+      }
+      .rojo {
+        background-color: #ff0000;
+        grid-area: rojo;
+      }
+      .naranja {
+        background-color: #ff6a00;
+        grid-area: naranja;
+      }
+      .magenta {
+        background-color: #ee00ff;
+        grid-area: magenta;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="contenedor">
+      <div class="menta"></div>
+      <div class="verde"></div>
+      <div class="azul"></div>
+      <div class="marron"></div>
+      <div class="rojo"></div>
+      <div class="naranja"></div>
+      <div class="magenta"></div>
+    </div>
+  </body>
+</html>

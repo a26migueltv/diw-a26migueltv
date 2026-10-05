@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ejercicio 3 - Flexbox</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+      }
+      #contenedor {
+        width: 100%;
+        height: 100vh;
+        padding: 2vh 1.5vw;
+        border: medium solid black;
+        display: flex;
+        gap: 1.5vw;
+      }
+      .columna {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 2vh;
+      }
+      .verde {
+        background-color: green;
+        flex: 1;
+      }
+      .rojo {
+        background-color: red;
+        flex: 1;
+      }
+      .azul {
+        background-color: blue;
+        flex: 1;
+      }
+      .morado {
+        background-color: blueviolet;
+        flex: 3;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="contenedor">
+      <div class="columna">
+        <div class="verde"></div>
+        <div class="rojo"></div>
+      </div>
+      <div class="columna">
+        <div class="azul"></div>
+        <div class="morado"></div>
+      </div>
+    </div>
+  </body>
+</html>

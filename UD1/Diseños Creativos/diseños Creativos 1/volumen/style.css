@@ -1,0 +1,245 @@
+/* Variables de color y tamaño */
+:root {
+  --fondo: #2b1633;         /* tapete morado del casino */
+  --cuerpo: #b3122e;        /* rojo de la máquina */
+  --cuerpo-oscuro: #7c0a1f;
+  --oro: #f2c14e;           /* molduras doradas */
+  --cara: #fff4d6;          /* fondo de los rodillos */
+  --tinta: #2a1a12;
+  --panel: #1c0f14;
+  --alto-celda: 90px;       /* alto de cada símbolo del rodillo (lo lee también el JS) */
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(circle at 50% 30%, #4a2656, var(--fondo) 70%);
+  font-family: 'Rubik', system-ui, sans-serif;
+  color: var(--cara);
+}
+
+button { font: inherit; cursor: pointer; }
+:focus-visible { outline: 3px solid #7fd6ff; outline-offset: 3px; }
+
+.sala {
+  display: flex;
+  align-items: center;
+  padding: 2rem 1rem;
+}
+
+/* ---------- Máquina ---------- */
+.maquina {
+  width: min(420px, 78vw);
+  padding: 1.5rem;
+  background: var(--cuerpo);
+  border: 6px solid var(--oro);
+  border-radius: 28px 28px 16px 16px;
+  box-shadow: inset 0 -12px 0 var(--cuerpo-oscuro), 0 20px 40px rgba(0, 0, 0, .5);
+}
+
+/* Temblor cuando intentas jugar sin créditos */
+.maquina.temblor { animation: temblor .4s; }
+@keyframes temblor {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-8px) rotate(-1deg); }
+  40% { transform: translateX(8px) rotate(1deg); }
+  60% { transform: translateX(-5px); }
+  80% { transform: translateX(5px); }
+}
+
+.marquesina {
+  margin: 0 0 1rem;
+  font-family: 'Bungee', Impact, sans-serif;
+  font-weight: 400;
+  font-size: clamp(1.3rem, 4vw, 1.8rem);
+  text-align: center;
+  color: var(--oro);
+  text-shadow: 0 3px 0 var(--cuerpo-oscuro);
+}
+/* Parpadeo cuando sale el premio gordo */
+.marquesina.premio { animation: parpadeo .25s steps(2) 6; }
+@keyframes parpadeo { 50% { color: var(--cara); } }
+
+/* ---------- Rodillos ---------- */
+.ventana {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  padding: 10px;
+  background: var(--panel);
+  border-radius: 12px;
+}
+
+.rodillo {
+  height: var(--alto-celda);
+  overflow: hidden;              /* solo se ve una celda de la tira */
+  background: var(--cara);
+  border-radius: 6px;
+  box-shadow: inset 0 12px 12px -6px rgba(0, 0, 0, .35),
+              inset 0 -12px 12px -6px rgba(0, 0, 0, .35);
+}
+.rodillo--modificador { background: #ffe7a8; }
+
+.tira { will-change: transform; }  /* la tira larga que se desplaza hacia arriba */
+
+.celda {
+  height: var(--alto-celda);
+  display: grid;
+  place-items: center;
+  font-family: 'Bungee', Impact, sans-serif;
+  font-size: 3rem;
+  color: var(--tinta);
+}
+
+.linea-premio {
+  position: absolute;
+  left: 4px; right: 4px; top: 50%;
+  height: 2px;
+  background: rgba(179, 18, 46, .6);
+  pointer-events: none;
+}
+
+/* ---------- Marcador ---------- */
+.panel {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  padding: .75rem 1rem;
+  background: var(--panel);
+  border-radius: 12px;
+}
+.marcador { display: flex; flex-direction: column; min-width: 80px; }
+.marcador-texto { font-size: .8rem; opacity: .7; }
+.marcador-valor {
+  font-family: 'Bungee', Impact, sans-serif;
+  font-size: 2rem;
+  line-height: 1;
+  color: var(--oro);
+}
+.medidor {
+  flex: 1;
+  height: 14px;
+  background: #3a2330;
+  border-radius: 7px;
+  overflow: hidden;
+}
+.medidor-relleno {
+  width: 0;
+  height: 100%;
+  background: linear-gradient(90deg, var(--oro), #ff5a3c);
+  transition: width .6s cubic-bezier(.3, 1.6, .5, 1);  /* rebota un poco al llegar */
+}
+
+.estado {
+  min-height: 1.5em;
+  margin: 1rem 0 .75rem;
+  text-align: center;
+  font-size: .95rem;
+}
+
+/* ---------- Botones de abajo ---------- */
+.botonera {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: .5rem;
+}
+.creditos { font-weight: 600; }
+
+.ranura, .probar {
+  position: relative;
+  padding: .55rem 1rem;
+  border: 0;
+  border-radius: 999px;
+  font-weight: 600;
+  color: var(--tinta);
+  background: var(--oro);
+  box-shadow: 0 4px 0 #a07a1f;
+  transition: transform .1s, box-shadow .1s;
+}
+.probar { background: var(--cara); box-shadow: 0 4px 0 #b9a878; }
+.ranura:active, .probar:active { transform: translateY(3px); box-shadow: 0 1px 0 #a07a1f; }
+
+/* Moneda que cae dentro de la ranura (o sale rebotada) */
+.moneda {
+  position: absolute;
+  left: 50%; top: -40px;
+  width: 26px; height: 26px;
+  margin-left: -13px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #fff3b0, #e0a520);
+  border: 2px solid #a07a1f;
+  opacity: 0;
+  pointer-events: none;
+}
+.moneda.entra { animation: entra .6s ease-in forwards; }
+@keyframes entra {
+  0%   { opacity: 1; transform: translateY(-30px) rotateY(0); }
+  70%  { opacity: 1; transform: translateY(40px) rotateY(540deg); }
+  100% { opacity: 0; transform: translateY(50px) rotateY(720deg) scale(.3); }
+}
+.moneda.rechazada { animation: rechazo .8s ease-out forwards; }
+@keyframes rechazo {
+  0%   { opacity: 1; transform: translateY(-30px); }
+  40%  { opacity: 1; transform: translateY(30px); }
+  70%  { opacity: 1; transform: translate(-60px, -40px) rotate(-200deg); }
+  100% { opacity: 0; transform: translate(-120px, 60px) rotate(-400deg); }
+}
+
+/* ---------- Palanca ---------- */
+.palanca {
+  position: relative;
+  width: 60px;
+  height: 260px;
+  margin-left: -6px;
+  padding: 0;
+  background: none;
+  border: 0;
+}
+.palanca-base {
+  position: absolute;
+  left: 0; bottom: 60px;
+  width: 30px; height: 60px;
+  background: var(--oro);
+  border-radius: 0 12px 12px 0;
+}
+.palanca-brazo {
+  position: absolute;
+  left: 18px; bottom: 90px;
+  width: 12px; height: 150px;
+  background: linear-gradient(90deg, #aaa, #fff, #888);
+  border-radius: 6px;
+  transform-origin: bottom center;   /* gira desde la base */
+}
+.palanca-bola {
+  position: absolute;
+  top: -22px; left: 50%;
+  width: 40px; height: 40px;
+  margin-left: -20px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #ff8a8a, #c3001f);
+}
+.palanca:hover .palanca-bola { filter: brightness(1.15); }
+
+/* Al tirar, el brazo "baja" (se aplana y se invierte) y vuelve a subir */
+.palanca.tirada .palanca-brazo { animation: tirar .7s ease-in-out; }
+@keyframes tirar {
+  0%   { transform: scaleY(1); }
+  40%  { transform: scaleY(-1); }
+  100% { transform: scaleY(1); }
+}
+
+/* Respeta a quien tiene las animaciones reducidas en el sistema */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+  }
+}

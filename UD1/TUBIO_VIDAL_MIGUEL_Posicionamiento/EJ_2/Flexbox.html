@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ejercicio 2 - Flexbox</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+      }
+      #contenedor {
+        width: 100%;
+        height: 100vh;
+        padding: 14vh 4vw;
+        border: thin dotted brown;
+        display: flex;
+      }
+      .caja {
+        flex: 1;
+      }
+      .amarilla {
+        background-color: khaki;
+        border: thin solid dimgray;
+      }
+      .celeste {
+        background-color: lightcyan;
+        border: thin solid indianred;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="contenedor">
+      <div class="caja amarilla"></div>
+      <div class="caja celeste"></div>
+    </div>
+  </body>
+</html>

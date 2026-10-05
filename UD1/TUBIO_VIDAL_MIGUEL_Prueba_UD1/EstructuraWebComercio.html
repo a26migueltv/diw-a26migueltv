@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Estructura web comercio</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        width: 100%;
+        height: 100vh;
+
+        display: grid;
+        grid-template-columns: 1fr 8fr;
+        grid-template-rows: 0.8fr minmax(0, 15fr) 0.8fr;
+        grid-template-areas:
+          'cabecera cabecera'
+          'menu principal'
+          'pie pie';
+        gap: 0.5rem;
+        font-weight: bold;
+        font-size: 0.9rem;
+        color: white;
+        text-align: center;
+      }
+
+      body > header,
+      body > nav,
+      body > footer {
+        background-color: cornflowerblue;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      body > header {
+        grid-area: cabecera;
+      }
+      body > nav {
+        grid-area: menu;
+      }
+      body > footer {
+        grid-area: pie;
+      }
+
+      body > nav {
+        padding-bottom: 20vh;
+      }
+
+      main {
+        grid-area: principal;
+        background-color: cornflowerblue;
+        display: grid;
+        grid-template-rows: 0.4fr minmax(0, 7fr) 0.8fr;
+        gap: 0.5rem;
+        padding: 0.5rem;
+      }
+
+      .title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .productos {
+        background-color: darkkhaki;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+        gap: 0.5rem;
+        padding: 0.5rem;
+      }
+
+      .productos > article {
+        background-color: seagreen;
+        border-radius: 0.3rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .productos h3 {
+        margin: 0;
+        font-size: inherit;
+      }
+
+      main > nav {
+        align-self: end;
+        margin-bottom: 0.2rem;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 0.5rem;
+        padding: 0 0.5rem;
+      }
+
+      .pag-caja {
+        grid-column: 2;
+        min-width: 0;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.3rem;
+        padding: 0.5rem;
+        background-color: rebeccapurple;
+        border-radius: 0.4rem;
+      }
+
+      .pag-caja a {
+        color: white;
+        text-decoration: none;
+        background-color: mediumpurple;
+        padding: 0.25rem 0.6rem;
+        border-radius: 0.25rem;
+        min-width: 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .pag-caja a.activo {
+        background-color: darkviolet;
+      }
+    </style>
+  </head>
+  <body>
+    <header>&lt;header&gt;</header>
+
+    <nav>&lt;nav&gt;</nav>
+
+    <main>
+      <div class="title">&lt;main&gt;</div>
+
+      <section class="productos">
+        <article><h3>Producto 1</h3></article>
+        <article><h3>Producto 2</h3></article>
+        <article><h3>Producto 3</h3></article>
+        <article><h3>Producto 4</h3></article>
+        <article><h3>Producto 5</h3></article>
+        <article><h3>Producto 6</h3></article>
+        <article><h3>Producto 7</h3></article>
+        <article><h3>Producto 8</h3></article>
+        <article><h3>Producto 9</h3></article>
+        <article><h3>Producto 10</h3></article>
+        <article><h3>Producto 11</h3></article>
+        <article><h3>Producto 12</h3></article>
+        <article><h3>Producto 13</h3></article>
+        <article><h3>Producto 14</h3></article>
+        <article><h3>Producto 15</h3></article>
+      </section>
+
+      <nav>
+        <div class="pag-caja">
+          <a href="#">Anterior</a>
+          <a href="#" class="activo">1</a>
+          <a href="#">2</a>
+          <a href="#">3</a>
+          <a href="#">Siguiente</a>
+        </div>
+      </nav>
+    </main>
+
+    <footer>&lt;footer&gt;</footer>
+  </body>
+</html>

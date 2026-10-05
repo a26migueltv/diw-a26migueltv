@@ -1,0 +1,157 @@
+:root {
+  --fondo: #e9e4ff;
+  --tinta: #1d1a3a;
+  --rojo: #ff4d4d;
+  --verde: #2bb673;
+  --blanco: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: var(--fondo);
+  font-family: 'Baloo 2', system-ui, sans-serif;
+  color: var(--tinta);
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+  border: 0;
+}
+:focus-visible {
+  outline: 3px solid var(--tinta);
+  outline-offset: 4px;
+}
+
+.panel {
+  width: min(360px, 90vw);
+  padding: 2rem;
+  background: var(--blanco);
+  border-radius: 24px;
+  border: 3px solid var(--tinta);
+  box-shadow: 8px 8px 0 var(--tinta);
+  text-align: center;
+}
+
+/* Altavoz: tembla máis canto máis alto está o volumen*/
+.altavoz {
+  font-size: 3rem;
+  display: inline-block;
+}
+.altavoz.sonando {
+  animation: vibrar 0.15s infinite;
+}
+@keyframes vibrar {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(calc(var(--vibra, 0) * 5px))
+      rotate(calc(var(--vibra, 0) * 6deg));
+  }
+}
+
+.numero {
+  margin: 0;
+  font-size: 4rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.barra {
+  height: 14px;
+  margin: 1rem 0 1.5rem;
+  background: var(--fondo);
+  border: 2px solid var(--tinta);
+  border-radius: 7px;
+  overflow: hidden;
+}
+.relleno {
+  width: 50%;
+  height: 100%;
+  background: var(--verde);
+  transition: width 0.3s ease;
+}
+
+/* Os botóns */
+.botones {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  min-height: 180px;
+}
+
+.bajar,
+.subir {
+  border-radius: 50%;
+  border: 3px solid var(--tinta);
+  color: var(--blanco);
+  font-weight: 800;
+  line-height: 1;
+}
+
+/* O de baixar gigante */
+.bajar {
+  width: 160px;
+  height: 160px;
+  font-size: 6rem;
+  background: var(--rojo);
+}
+
+/* O de subir mais pequeno e contrólao o js */
+.subir {
+  width: 70px;
+  height: 70px;
+  font-size: 2.5rem;
+  background: var(--verde);
+  transition: scale 0.3s ease;
+}
+
+/* animacións ao pulsar con transform, importante para que non pelee co scale */
+.subir.boing {
+  animation: boing 0.35s;
+}
+@keyframes boing {
+  30% {
+    transform: scale(1.4) rotate(-15deg);
+  }
+  60% {
+    transform: scale(0.9) rotate(10deg);
+  }
+}
+.bajar.aplastar {
+  animation: aplastar 0.3s;
+}
+@keyframes aplastar {
+  40% {
+    transform: scaleX(1.2) scaleY(0.75);
+  }
+  70% {
+    transform: scaleX(0.95) scaleY(1.05);
+  }
+}
+
+.play {
+  margin-top: 1rem;
+  padding: 0.5rem 1.2rem;
+  border-radius: 999px;
+  border: 2px solid var(--tinta);
+  background: var(--fondo);
+  font-weight: 500;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

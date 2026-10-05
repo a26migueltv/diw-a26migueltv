@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ejercicio 1 - Flexbox</title>
+    <style>
+      body {
+        margin: 0;
+      }
+      #bandera {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+      }
+      .franja {
+        flex: 1;
+      }
+      .azul {
+        background-color: blue;
+      }
+      .blanco {
+        background-color: white;
+      }
+      .rojo {
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="bandera">
+      <div class="franja azul"></div>
+      <div class="franja blanco"></div>
+      <div class="franja rojo"></div>
+    </div>
+  </body>
+</html>

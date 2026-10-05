@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ejercicio 4 - Grid</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+      }
+      #contenedor {
+        width: 100%;
+        height: 100vh;
+        padding: 2vh 1.5vw;
+        display: grid;
+        border: thin dotted black;
+        grid-template-rows: 1fr 1fr;
+        gap: 2vh;
+        grid-template-areas:
+          'naranja'
+          'azul';
+      }
+      .naranja {
+        background-color: coral;
+        grid-area: naranja;
+      }
+      .azul {
+        background-color: cornflowerblue;
+        grid-area: azul;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="contenedor">
+      <div class="naranja"></div>
+      <div class="azul"></div>
+    </div>
+  </body>
+</html>

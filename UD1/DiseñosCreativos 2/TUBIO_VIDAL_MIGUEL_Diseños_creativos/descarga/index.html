@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Descarga</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="ventana" id="ventana">
+    <div class="titulo">
+      <span>Descargando archivo…</span>
+      <span class="cerrar" aria-hidden="true">✕</span>
+    </div>
+
+    <div class="contenido">
+      <p class="archivo">📄 trabajo_final_DEFINITIVO_v3.txt</p>
+
+      <div class="progreso"><div class="relleno" id="relleno"></div></div>
+
+      <div class="info">
+        <span id="estado" aria-live="polite">Pulsa el botón para descargar.</span>
+        <span id="porcentaje">0 %</span>
+      </div>
+
+      <button class="boton" id="descargar" type="button">Descargar</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

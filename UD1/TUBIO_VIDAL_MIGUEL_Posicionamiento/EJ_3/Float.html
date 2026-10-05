@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ejercicio 3 - Float</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+      }
+      #contenedor {
+        width: 100%;
+        height: 100vh;
+        padding: 2vh 1.5vw;
+        border: medium solid black;
+      }
+      .columna {
+        float: left;
+        width: calc(50% - 0.75vw);
+        height: 100%;
+      }
+      .izquierda {
+        margin-right: 1.5vw;
+      }
+      .verde {
+        background-color: green;
+        height: calc(50% - 1vh);
+        margin-bottom: 2vh;
+      }
+      .rojo {
+        background-color: red;
+        height: calc(50% - 1vh);
+      }
+      .azul {
+        background-color: blue;
+        height: calc(25% - 0.5vh);
+        margin-bottom: 2vh;
+      }
+      .morado {
+        background-color: blueviolet;
+        height: calc(75% - 1.5vh);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="contenedor">
+      <div class="columna izquierda">
+        <div class="verde"></div>
+        <div class="rojo"></div>
+      </div>
+      <div class="columna">
+        <div class="azul"></div>
+        <div class="morado"></div>
+      </div>
+    </div>
+  </body>
+</html>
