@@ -1,0 +1,20 @@
+.muestra {
+  height: 80px;
+  margin-top: 8px;
+  border-radius: var(--radio);
+  border: 1px dashed var(--borde);
+  transition: background-color 0.3s;
+}
+
+/* Clases que se aplican desde JS según el color elegido */
+.muestra.rojo {
+  background-color: #ef4444;
+}
+
+.muestra.verde {
+  background-color: #22c55e;
+}
+
+.muestra.azul {
+  background-color: #3b82f6;
+}

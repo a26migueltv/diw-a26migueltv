@@ -1,0 +1,23 @@
+.login {
+  max-width: 360px;
+  margin-top: 40px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.login h1 {
+  text-align: center;
+}
+
+.login .ayuda {
+  text-align: center;
+}
+
+.login button {
+  width: 100%;
+  margin-top: 8px;
+}
+
+.login input:focus {
+  outline: 2px solid var(--primario);
+  outline-offset: 1px;
+}

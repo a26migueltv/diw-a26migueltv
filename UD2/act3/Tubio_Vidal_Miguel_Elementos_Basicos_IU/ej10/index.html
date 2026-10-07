@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Actividad 10 - Barra de navegación</title>
+  <link rel="stylesheet" href="../comun.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="barra">
+    <span class="logo">MiTienda</span>
+    <ul>
+      <li><a href="#" class="enlace activo" data-seccion="inicio">Inicio</a></li>
+      <li><a href="#" class="enlace" data-seccion="productos">Productos</a></li>
+      <li><a href="#" class="enlace" data-seccion="contacto">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <main class="tarjeta">
+    <section id="inicio" class="seccion visible">
+      <h1>Inicio</h1>
+      <p>Bienvenido a MiTienda. Usa la barra de arriba para moverte por la página sin cambiar de archivo HTML.</p>
+    </section>
+
+    <section id="productos" class="seccion">
+      <h1>Productos</h1>
+      <ul>
+        <li>Teclado mecánico</li>
+        <li>Ratón inalámbrico</li>
+        <li>Auriculares</li>
+      </ul>
+    </section>
+
+    <section id="contacto" class="seccion">
+      <h1>Contacto</h1>
+      <p>Correo: info@mitienda.es</p>
+      <p>Teléfono: 981 000 000</p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

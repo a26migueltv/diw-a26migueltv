@@ -1,0 +1,68 @@
+body {
+  padding: 0;
+}
+
+.barra {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 12px 16px;
+  margin-bottom: 24px;
+  background: var(--texto);
+}
+
+.logo {
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.barra ul {
+  display: flex;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.enlace {
+  display: block;
+  padding: 8px 14px;
+  color: #cbd2d9;
+  text-decoration: none;
+  border-radius: var(--radio);
+}
+
+.enlace:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Opción seleccionada */
+.enlace.activo {
+  color: #fff;
+  background: var(--primario);
+}
+
+/* Solo se ve la sección que tenga la clase "visible" */
+.seccion {
+  display: none;
+}
+
+.seccion.visible {
+  display: block;
+}
+
+main.tarjeta {
+  margin-left: 16px;
+  margin-right: 16px;
+}
+
+@media (min-width: 520px) {
+  main.tarjeta {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

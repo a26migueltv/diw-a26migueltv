@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Actividad 8 - Botones de opción</title>
+  <link rel="stylesheet" href="../comun.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="tarjeta">
+    <h1>Actividad 8: Método de pago</h1>
+    <fieldset>
+      <legend>Elige un método de pago</legend>
+      <label class="opcion">
+        <input type="radio" name="pago" value="Tarjeta de crédito">
+        Tarjeta de crédito
+      </label>
+      <label class="opcion">
+        <input type="radio" name="pago" value="PayPal">
+        PayPal
+      </label>
+      <label class="opcion">
+        <input type="radio" name="pago" value="Transferencia bancaria">
+        Transferencia bancaria
+      </label>
+    </fieldset>
+    <button id="btnConfirmar">Confirmar</button>
+    <p id="resultado" class="resultado"></p>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

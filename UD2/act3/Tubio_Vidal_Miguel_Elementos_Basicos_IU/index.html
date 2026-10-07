@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elementos básicos de IU - Actividad final</title>
+  <link rel="stylesheet" href="comun.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="cabecera">
+    <h1>Creación de elementos básicos</h1>
+    <p>Miguel Tubío Vidal · Deseño de Interfaces Web</p>
+  </header>
+
+  <section class="selector">
+    <label for="actividad">Actividad</label>
+    <div class="fila">
+      <select id="actividad">
+        <option value="">-- Elige una actividad --</option>
+        <option value="ej01/index.html">1. Página web básica</option>
+        <option value="ej02/index.html">2. Múltiples botones</option>
+        <option value="ej03/index.html">3. Campo de texto</option>
+        <option value="ej04/index.html">4. Etiquetas y campos de texto</option>
+        <option value="ej05/index.html">5. Ventanas y mensajes</option>
+        <option value="ej06/index.html">6. Menú desplegable</option>
+        <option value="ej07/index.html">7. Campo de contraseña</option>
+        <option value="ej08/index.html">8. Botones de opción</option>
+        <option value="ej09/index.html">9. Casillas de verificación</option>
+        <option value="ej10/index.html">10. Barra de navegación</option>
+      </select>
+      <button id="btnCargar">Cargar</button>
+    </div>
+    <p id="aviso" class="ayuda"></p>
+  </section>
+
+  <section class="visor">
+    <div id="vacio" class="vacio">Selecciona una actividad y pulsa «Cargar».</div>
+    <iframe id="marco" title="Actividad seleccionada" hidden></iframe>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

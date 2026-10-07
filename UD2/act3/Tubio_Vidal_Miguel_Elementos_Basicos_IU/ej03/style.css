@@ -1,0 +1,8 @@
+.fila {
+  display: flex;
+  gap: 8px;
+}
+
+.fila input {
+  flex: 1;
+}

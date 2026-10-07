@@ -1,0 +1,13 @@
+.botones {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.cancelar {
+  background: var(--peligro);
+}
+
+.cancelar:hover {
+  background: #b91c1c;
+}

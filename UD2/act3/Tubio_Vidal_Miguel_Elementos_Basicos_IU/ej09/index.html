@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Actividad 9 - Casillas de verificación</title>
+  <link rel="stylesheet" href="../comun.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="tarjeta">
+    <h1>Actividad 9: Tu pizza</h1>
+    <fieldset>
+      <legend>Ingredientes extra</legend>
+      <label class="opcion">
+        <input type="checkbox" name="ingrediente" value="Queso extra">
+        Queso extra
+      </label>
+      <label class="opcion">
+        <input type="checkbox" name="ingrediente" value="Pepperoni">
+        Pepperoni
+      </label>
+      <label class="opcion">
+        <input type="checkbox" name="ingrediente" value="Aceitunas">
+        Aceitunas
+      </label>
+    </fieldset>
+    <button id="btnOrdenar">Ordenar</button>
+    <div id="resultado" class="resultado"></div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+.cabecera,
+.selector,
+.visor {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cabecera {
+  margin-bottom: 20px;
+}
+
+.cabecera h1 {
+  margin-bottom: 4px;
+  font-size: 1.6rem;
+}
+
+.cabecera p {
+  margin: 0;
+  color: var(--texto-suave);
+}
+
+.selector {
+  padding: 16px;
+  margin-bottom: 16px;
+  background: var(--tarjeta);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+}
+
+.fila {
+  display: flex;
+  gap: 8px;
+}
+
+.fila select {
+  flex: 1;
+}
+
+#aviso {
+  margin: 8px 0 0;
+  min-height: 1.5em;
+}
+
+.visor {
+  height: 560px;
+  background: var(--tarjeta);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+  overflow: hidden;
+}
+
+.vacio {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 16px;
+  text-align: center;
+  color: var(--texto-suave);
+}
+
+/* Sin esto, el display:flex de .vacio ganaría al atributo hidden */
+[hidden] {
+  display: none !important;
+}
+
+#marco {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+@media (max-width: 480px) {
+  .fila {
+    flex-direction: column;
+  }
+}

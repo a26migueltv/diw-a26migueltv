@@ -1,0 +1,8 @@
+#saludo {
+  color: var(--primario);
+  font-size: 1.1rem;
+}
+
+#saludo.error {
+  color: var(--peligro);
+}

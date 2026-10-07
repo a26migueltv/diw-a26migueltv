@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Actividad 7 - Campo de contraseña</title>
+  <link rel="stylesheet" href="../comun.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="tarjeta login">
+    <h1>Iniciar sesión</h1>
+    <p class="ayuda">Los datos se muestran en la consola (F12).</p>
+    <form id="formLogin">
+      <div class="campo">
+        <label for="usuario">Usuario</label>
+        <input type="text" id="usuario" autocomplete="username">
+      </div>
+      <div class="campo">
+        <label for="contrasena">Contraseña</label>
+        <input type="password" id="contrasena" autocomplete="current-password">
+      </div>
+      <button type="submit">Iniciar sesión</button>
+    </form>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
