@@ -15,7 +15,7 @@
 ## Identidad
 - Nombre del estudio: "modem". Lema: "Estudio de videojuegos independiente".
 - Logo: icono de un router con 4 antenas, estilo de línea. Archivos en
-  ~/Clase/DIW/proyecto-modem/logo-modem/ (versiones blanca y negra, SVG y PNG).
+  ~/Clase/DIW/UD2/proyecto-modem/logo-modem/ (versiones blanca y negra, SVG y PNG).
   El nombre se escribe en Figma con Press Start 2P, nunca dentro de la imagen.
 - Inspiración de estructura: web de Team Cherry (logo y menú arriba, blog con miniaturas,
   footer con la misión del estudio).
@@ -24,7 +24,7 @@
 - Tipografía: Press Start 2P para títulos (títulos cortos, es poco legible en textos
   largos) e Inter para el texto. Los tamaños oficiales son los estilos de texto de Figma.
 - Redes sociales: X, Instagram y Facebook. Iconos de Tabler Icons (outline) en
-  ~/Clase/DIW/proyecto-modem/recursos/.
+  ~/Clase/DIW/UD2/proyecto-modem/recursos/.
 - Las decisiones de diseño se justifican con la teoría del tema UD2: psicología del
   color, paleta monocromática con un acento, máximo 3 colores de base, jerarquía visual,
   retícula, contraste y patrones de layout (imagen a pantalla completa en Inicio,
@@ -116,6 +116,8 @@
   redes sociales, logo) y documenta cualquier componente nuevo en la guía de estilo.
 - Contraste mínimo de texto: 4.5:1.
 - Al acabar cada tarea, dame el enlace al archivo y un resumen de lo que has cambiado.
-- ~/Clase/DIW es un repositorio git (la carpeta del proyecto está dentro).
+- ~/Clase/DIW es un repositorio git (la carpeta del proyecto está dentro, en
+  UD2/proyecto-modem/).
   No hagas commit ni push sin que te lo pida.
+- Los commits y push se hacen SIEMPRE en main, sin crear ramas.
 - Háblame en español y en tono informal.
