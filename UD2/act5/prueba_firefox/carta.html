@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8"><script>window.__erroresJS=[];addEventListener("error",e=>__erroresJS.push(e.message));</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Carta de Nami Ramen: seis ramen, tres aperitivos y dos postres japoneses.">
+    <meta name="author" content="Miguel Tubío Vidal">
+    <title>Carta · Nami Ramen</title>
+    <link rel="icon" href="img/emblema.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="fuentes/fuentes.css">
+    <link rel="stylesheet" href="estilos_comun.css">
+    <link rel="stylesheet" href="estilos_carta.css">
+</head>
+<body id="pagina-carta">
+    <a id="saltar-contenido" href="#contenido">Saltar al contenido</a>
+
+    <!-- Barra superior: datos rápidos -->
+    <div id="barra-superior">
+        <div id="barra-superior-contenido" class="contenedor">
+            <ul id="datos-rapidos">
+                <li class="ocultar-movil"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg><span>Rúa da Raíña, 18 · Santiago de Compostela</span></li>
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2a10 10 0 1 1 0 20 10 10 0 0 1 0-20zm0 2a8 8 0 1 0 0 16 8 8 0 0 0 0-16zm1 3v5.4l3.6 2.1-1 1.7L11 13.6V7h2z"/></svg><span id="estado-abierto" tabindex="0" data-tooltip="Martes a domingo: 13:00–16:00 y 20:00–23:30. Lunes cerrado.">Martes a domingo · 13:00–16:00 y 20:00–23:30</span></li>
+                <li class="ocultar-movil"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg><a href="tel:+34981000123">981 000 123</a></li>
+            </ul>
+            <div id="redes-barra-superior" class="redes-sociales">
+                <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram de Nami Ramen (se abre en otra pestaña)" data-tooltip="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9zm0 2a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zm5.3-4.1a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4z"/></svg></a>
+                <a href="https://www.tiktok.com/" target="_blank" rel="noopener" aria-label="TikTok de Nami Ramen (se abre en otra pestaña)" data-tooltip="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.6 2h-3.3v13.2a2.9 2.9 0 1 1-2.9-2.9c.3 0 .6 0 .9.1V9a6.2 6.2 0 1 0 5.3 6.1V8.7a7.7 7.7 0 0 0 4.4 1.4V6.8a4.4 4.4 0 0 1-4.4-4.8z"/></svg></a>
+                <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook de Nami Ramen (se abre en otra pestaña)" data-tooltip="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8h3V4.5h-3c-2.8 0-4.5 1.8-4.5 4.6V11H7v3.5h2.5V22h3.6v-7.5h2.9l.5-3.5h-3.4V9.4c0-.9.4-1.4 1.4-1.4z"/></svg></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cabecera con navegación principal -->
+    <header id="cabecera">
+        <div id="cabecera-contenido" class="contenedor">
+            <a id="logo-cabecera" href="index.html" aria-label="Nami Ramen, ir a la portada">
+                <img src="img/logo.svg" alt="Logotipo de Nami Ramen" width="481" height="160">
+            </a>
+            <nav id="navegacion-principal" aria-label="Navegación principal">
+                <ul id="lista-navegacion">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="conocenos.html">Conócenos</a></li>
+                    <li><a href="carta.html" aria-current="page">Carta</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                    <li class="reservar-movil"><a class="boton boton--rojo" href="contacto.html#formulario-contacto">Reservar mesa</a></li>
+                </ul>
+            </nav>
+            <a id="boton-reservar-cabecera" class="boton boton--rojo" href="contacto.html#formulario-contacto" data-tooltip="Reserva en menos de un minuto">Reservar mesa</a>
+            <button id="boton-menu" type="button" aria-expanded="false" aria-controls="navegacion-principal" aria-label="Abrir el menú">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <main id="contenido">
+
+        <!-- Cabecera de la sección -->
+        <section id="cabecera-carta" class="cabecera-pagina" aria-labelledby="titulo-carta">
+            <img src="img/carta/cabecera_cocina.jpg" alt="Cocinero preparando ramen en una cocina con vapor" width="1024" height="768">
+            <div id="cabecera-carta-texto" class="contenedor">
+                <nav id="migas-carta" class="migas" aria-label="Estás en">
+                    <ol>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><span aria-current="page">Carta</span></li>
+                    </ol>
+                </nav>
+                <h1 id="titulo-carta">La carta</h1>
+                <p>Un solo plato hecho de seis maneras, tres aperitivos para abrir boca y dos postres para cerrar.</p>
+            </div>
+            <p class="kanji-vertical" aria-hidden="true" lang="ja">お品書き</p>
+        </section>
+
+        <!-- Guía de la carta: filtros y leyenda -->
+        <section id="guia-carta" aria-label="Filtrar la carta">
+            <div id="guia-carta-contenido" class="contenedor">
+                <div id="filtros" role="group" aria-label="Mostrar">
+                    <button type="button" class="filtro activo" data-filtro="todo" aria-pressed="true">Todo</button>
+                    <button type="button" class="filtro" data-filtro="aperitivos" aria-pressed="false">Aperitivos</button>
+                    <button type="button" class="filtro" data-filtro="ramen" aria-pressed="false">Ramen</button>
+                    <button type="button" class="filtro" data-filtro="postres" aria-pressed="false">Postres</button>
+                    <button type="button" class="filtro" data-filtro="vegano" aria-pressed="false" data-tooltip="Solo platos sin ingredientes animales">Vegano</button>
+                    <button type="button" class="filtro" data-filtro="sin-picante" aria-pressed="false" data-tooltip="Oculta los platos picantes">Sin picante</button>
+                </div>
+                <p id="resultado-filtro" aria-live="polite">Mostrando los 11 platos de la carta.</p>
+                <details id="leyenda-alergenos">
+                    <summary>Leyenda de alérgenos y picante</summary>
+                    <ul id="lista-leyenda"><li><span class="alergeno" aria-hidden="true">G</span> gluten</li><li><span class="alergeno" aria-hidden="true">H</span> huevo</li><li><span class="alergeno" aria-hidden="true">S</span> soja</li><li><span class="alergeno" aria-hidden="true">Sé</span> sésamo</li><li><span class="alergeno" aria-hidden="true">L</span> lácteos</li><li><span class="alergeno" aria-hidden="true">P</span> pescado</li><li><span class="alergeno" aria-hidden="true">Mo</span> moluscos</li><li><span class="picante picante--leyenda" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.6 7.2c2.9-.4 4.9 1.6 4.6 4.6-.5 5.3-6.3 10-14.2 10.2 4.6-2.4 7.4-6.6 7.6-11.5.1-1.8.8-3.1 2-3.3z"/><path d="M13.4 7.6c-.3-2.4.7-4.4 3-5.6l.8 1.4c-1.6.9-2.3 2.2-2 4z"/></svg></span> nivel de picante (1 a 3)</li></ul>
+                    <p id="nota-leyenda">Pasa el ratón (o toca) sobre cada icono de un plato para ver qué significa.</p>
+                </details>
+            </div>
+        </section>
+
+        <!-- Aperitivos -->
+        <section id="seccion-aperitivos" class="seccion seccion-carta" data-categoria="aperitivos" aria-labelledby="titulo-aperitivos">
+            <div id="aperitivos-contenido" class="contenedor">
+                <div id="aperitivos-cabecera" class="cabecera-seccion revelar">
+                    <p class="antetitulo"><span lang="ja">前菜</span> Para empezar</p>
+                    <h2 id="titulo-aperitivos">Aperitivos</h2>
+                </div>
+                <div id="lista-aperitivos" class="rejilla-platos">
+                    <article id="plato-gyozas" class="plato revelar" data-categoria="aperitivos" data-etiquetas="sin-picante">
+                        <figure id="foto-gyozas" class="plato-foto">
+                            <img src="img/carta/gyoza.jpg" alt="Seis gyozas a la plancha doradas sobre un plato azul" width="1024" height="768" loading="lazy">
+                            
+                        </figure>
+                        <div id="info-gyozas" class="plato-info">
+                            <header id="cabecera-gyozas" class="plato-cabecera">
+                                <h3>Gyozas <span lang="ja">餃子</span></h3>
+                                <p class="precio">6,90 €</p>
+                            </header>
+                            <p class="plato-descripcion">Seis empanadillas de cerdo celta, col y jengibre, doradas a la plancha. Con salsa ponzu.</p>
+                            <footer id="pie-gyozas" class="plato-pie">
+                                <ul id="alergenos-gyozas" class="alergenos" aria-label="Alérgenos"><li class="alergeno" tabindex="0" data-tooltip="Contiene gluten (trigo)"><span aria-hidden="true">G</span><span class="solo-lectores">Contiene gluten (trigo)</span></li><li class="alergeno" tabindex="0" data-tooltip="Contiene soja"><span aria-hidden="true">S</span><span class="solo-lectores">Contiene soja</span></li><li class="alergeno" tabindex="0" data-tooltip="Contiene sésamo"><span aria-hidden="true">Sé</span><span class="solo-lectores">Contiene sésamo</span></li></ul>
+                                
+                            </footer>
+                        </div>
+                    </article>
+                    <article id="plato-edamame" class="plato revelar" data-categoria="aperitivos" data-etiquetas="vegano sin-picante" data-retraso="1">
+                        <figure id="foto-edamame" class="plato-foto">
+                            <img src="img/carta/edamame.jpg" alt="Vainas de edamame verdes con sal en escamas" width="1024" height="755" loading="lazy">
+                            
+                        </figure>
+                        <div id="info-edamame" class="plato-info">
+                            <header id="cabecera-edamame" class="plato-cabecera">
+                                <h3>Edamame <span lang="ja">枝豆</span></h3>
+                                <p class="precio">4,50 €</p>
+                            </header>
+                            <p class="plato-descripcion">Vainas de soja verde al vapor con sal en escamas y un toque de shichimi opcional.</p>
+                            <footer id="pie-edamame" class="plato-pie">
+                                <ul id="alergenos-edamame" class="alergenos" aria-label="Alérgenos"><li class="alergeno" tabindex="0" data-tooltip="Contiene soja"><span aria-hidden="true">S</span><span class="solo-lectores">Contiene soja</span></li></ul>
+                                <span class="insignia insignia--vegano" data-tooltip="Sin ingredientes de origen animal">Vegano</span>
+                            </footer>
+                        </div>
+                    </article>
+                    <article id="plato-takoyaki" class="plato revelar" data-categoria="aperitivos" data-etiquetas="sin-picante" data-retraso="2">
+                        <figure id="foto-takoyaki" class="plato-foto">
+                            <img src="img/carta/takoyaki.jpg" alt="Bolitas de takoyaki con salsa, mayonesa y virutas de bonito" width="1024" height="686" loading="lazy">
+                            
+                        </figure>
+                        <div id="info-takoyaki" class="plato-info">
+                            <header id="cabecera-takoyaki" class="plato-cabecera">
+                                <h3>Takoyaki <span lang="ja">たこ焼き</span></h3>
+                                <p class="precio">7,50 €</p>
+                            </header>
+                            <p class="plato-descripcion">Seis buñuelos de pulpo de la ría con salsa takoyaki, mayonesa japonesa y katsuobushi.</p>
+                            <footer id="pie-takoyaki" class="plato-pie">
+                                <ul id="alergenos-takoyaki" class="alergenos" aria-label="Alérgenos"><li class="alergeno" tabindex="0" data-tooltip="Contiene gluten (trigo)"><span aria-hidden="true">G</span><span class="solo-lectores">Contiene gluten (trigo)</span></li><li class="alergeno" tabindex="0" data-tooltip="Contiene huevo"><span aria-hidden="true">H</span><span class="solo-lectores">Contiene huevo</span></li><li class="alergeno" tabindex="0" data-tooltip="Contiene soja"><span aria-hidden="true">S</span><span class="solo-lectores">Contiene soja</span></li><li class="alergeno" tabindex="0" data-tooltip="Contiene pescado"><span aria-hidden="true">P</span><span class="solo-lectores">Contiene pescado</span></li><li class="alergeno" tabindex="0" data-tooltip="Contiene moluscos"><span aria-hidden="true">Mo</span><span class="solo-lectores">Contiene moluscos</span></li></ul>
+                                
+                            </footer>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ramen: el producto base -->
+        <section id="seccion-ramen" class="seccion seccion--oscura seccion-carta" data-categoria="ramen" aria-labelledby="titulo-ramen">
+            <div id="ramen-contenido" class="contenedor">
+                <div id="ramen-cabecera" class="cabecera-seccion revelar">
+                    <p class="antetitulo"><span lang="ja">ラーメン</span> El plato principal</p>
+                    <h2 id="titulo-ramen">Ramen</h2>
+                    <p>Todos llevan fideo de trigo hecho cada mañana. Si necesitas una opción sin gluten, pídenos fideo de arroz al reservar (lo cocemos aparte, pero la cocina es pequeña y no podemos garantizar la ausencia de trazas).</p>
+                </div>
+                <div id="lista-ramen" class="rejilla-platos rejilla-platos--ramen">
+                    <article id="plato-tonkotsu" class="plato plato--grande revelar" data-categoria="ramen" data-etiquetas="sin-picante">
+                        <figure id="foto-tonkotsu" class="plato-foto">
+                            <img src="img/carta/tonkotsu.jpg" alt="Ramen tonkotsu de caldo blanco con chashu, huevo, setas y cebolleta" width="1024" height="686" loading="lazy">
+                            <span class="insignia insignia--chef">Recomendado del chef</span>
+                        </figure>
+                        <div id="info-tonkotsu" class="plato-info">
+                            <header id="cabecera-tonkotsu" class="plato-cabecera">
+                                <h3>Tonkotsu <span lang="ja">豚骨</span></h3>
+                                <p class="precio">14,50 €</p>
+                            </header>
+                            <p class="plato-descripcion">Caldo blanco de hueso de cerdo cocido 18 horas, chashu glaseado, huevo ajitama, setas kikurage, cebolleta y nori.</p>
+                            <footer id="pie-tonkotsu" class="plato-pie">
+                                <ul id="alergenos-tonkotsu" class="alergenos" aria-label="Alérgenos"><li class="alergeno" tabindex="0" data-tooltip="Contiene gluten (trigo)"><span aria-hidden="true">G</span><span class="solo-lectores">Contiene gluten (trigo)</span></li><li class="alergeno" tabindex="0" data-tooltip="Contiene huevo"><span aria-hidden="true">H</span><span class="solo-lectores">Contiene huevo</span></li><li class="alergeno" tabindex="0" data-tooltip="Contiene soja"><span aria-hidden="true">S</span><span class="solo-lectores">Contiene soja</span></li><li class="alergeno" tabindex="0" data-tooltip="Contiene sésamo"><span aria-hidden="true">Sé</span><span class="solo-lectores">Contiene sésamo</span></li></ul>
+                                
+                            </footer>
+                        </div>
+                    </article>
+                    <article id="plato-shoyu" class="plato plato--grande revelar" data-categoria="ramen" data-etiquetas="sin-picante" data-retraso="1">
+                        <figure id="foto-shoyu" class="plato-foto">
+                            <img src="img/carta/shoyu.jpg" alt="Ramen shoyu de caldo claro con huevo, chashu y cebolleta" width="1024" height="686" loading="lazy">
+                            
+                        </figure>
+                        <div id="info-shoyu" class="plato-info">
+                            <header id="cabecera-shoyu" class="plato-cabecera">
+                                <h3>Shoyu <span lang="ja">醤油</span></h3>
+                                <p class="precio">13,50 €</p>
+                            </header>
+                            <p class="plato-descripcion">Caldo claro de pollo y dashi con tare de soja, chashu, brotes de bambú (menma), naruto y huevo ajitama.</p>
+                            <footer id="pie-shoyu" class="plato-pie">
+                                <ul id="alergenos-shoyu" class="alergenos" aria-label="Alérgenos"><li class="alergeno" tabindex="0" data-tooltip="Contiene gluten (trigo)"><span aria-hidden="true">G</span><span class="solo-lectores">Contiene gluten (trigo)</span></li><li class="alergeno" tabindex="0" data-tooltip="Contiene huevo"><span aria-hidden="true">H</span><span class="solo-lectores">Contiene huevo</span></li><li class="alergeno" tabindex="0" data-tooltip="Contiene soja"><span aria-hidden="true">S</span><span class="solo-lectores">Contiene soja</span></li><li class="alergeno" tabindex="0" data-tooltip="Contiene pescado"><span aria-hidden="true">P</span><span class="solo-lectores">Contiene pescado</span></li></ul>
+                                
+                            </footer>
+                        </div>
+                    </article>
+                    <article id="plato-miso" class="plato plato--grande revelar" data-categoria="ramen" data-etiquetas="" data-retraso="2">
+                        <figure id="foto-miso" class="plato-foto">
+                            <img src="img/carta/miso.jpg" alt="Ramen de miso con chashu, huevo, naruto y cebolleta" width="1024" height="768" loading="lazy">
+                            
+                        </figure>
+                        <div id="info-miso" class="plato-info">
+                            <header id="cabecera-miso" class="plato-cabecera">
+                                <h3>Miso <span lang="ja">味噌</span></h3>
+                                <p class="precio">14,00 €</p>
+                            </header>
+                            <p class="plato-descripcion">Caldo de miso rojo al estilo de Sapporo, el de la familia: maíz, brotes de soja salteados, chashu y una nuez de mantequilla.</p>
+                            <footer id="pie-miso" class="plato-pie">
+                                <ul id="alergenos-miso" class="alergenos" aria-label="Alérgenos"><li class="alergeno" tabindex="0" data-tooltip="Contiene gluten (trigo)"><span aria-hidden="true">G</span><span class="solo-lectores">Contiene gluten (trigo)</span></li><li class="alergeno" tabindex="0" data-tooltip="Contiene soja"><span aria-hidden="true">S</span><span class="solo-lectores">Contiene soja</span></li><li class="alergeno" tabindex="0" data-tooltip="Contiene sésamo"><span aria-hidden="true">Sé</span><span class="solo-lectores">Contiene sésamo</span></li><li class="alergeno" tabindex="0" data-tooltip="Contiene lácteos"><span aria-hidden="true">L</span><span class="solo-lectores">Contiene lácteos</span></li></ul>
+                                <p class="picante" tabindex="0" data-tooltip="Picante suave (1 de 3)"><span class="solo-lectores">Picante suave</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.6 7.2c2.9-.4 4.9 1.6 4.6 4.6-.5 5.3-6.3 10-14.2 10.2 4.6-2.4 7.4-6.6 7.6-11.5.1-1.8.8-3.1 2-3.3z"/><path d="M13.4 7.6c-.3-2.4.7-4.4 3-5.6l.8 1.4c-1.6.9-2.3 2.2-2 4z"/></svg></p>
+                            </footer>
+                        </div>
+                    </article>
+                    <article id="plato-shio" class="plato plato--grande revelar" data-categoria="ramen" data-etiquetas="sin-picante">
+                        <figure id="foto-shio" class="plato-foto">
+                            <img src="img/carta/shio.jpg" alt="Ramen shio visto desde arriba con huevo, nori, brotes verdes y palillos" width="1024" height="683" loading="lazy">
+                            
+                        </figure>
+                        <div id="info-shio" class="plato-info">
+                            <header id="cabecera-shio" class="plato-cabecera">
+                                <h3>Shio de yuzu <span lang="ja">塩</span></h3>
+                                <p class="precio">13,90 €</p>
+                            </header>
+                            <p class="plato-descripcion">El más ligero: caldo de pollo y kombu con sal marina y cáscara de yuzu, pollo a baja temperatura, huevo y mizuna.</p>
+                            <footer id="pie-shio" class="plato-pie">
+                                <ul id="alergenos-shio" class="alergenos" aria-label="Alérgenos"><li class="alergeno" tabindex="0" data-tooltip="Contiene gluten (trigo)"><span aria-hidden="true">G</span><span class="solo-lectores">Contiene gluten (trigo)</span></li><li class="alergeno" tabindex="0" data-tooltip="Contiene huevo"><span aria-hidden="true">H</span><span class="solo-lectores">Contiene huevo</span></li></ul>
+                                
+                            </footer>
+                        </div>
+                    </article>
+                    <article id="plato-tantanmen" class="plato plato--grande revelar" data-categoria="ramen" data-etiquetas="picante" data-retraso="1">
+                        <figure id="foto-tantanmen" class="plato-foto">
+                            <img src="img/carta/tantanmen.jpg" alt="Tantanmen de caldo rojizo con carne picada especiada y chile" width="1024" height="683" loading="lazy">
+                            
+                        </figure>
+                        <div id="info-tantanmen" class="plato-info">
+                            <header id="cabecera-tantanmen" class="plato-cabecera">
+                                <h3>Tantanmen <span lang="ja">担々麺</span></h3>
+                                <p class="precio">14,90 €</p>
+                            </header>
+                            <p class="plato-descripcion">Caldo cremoso de pasta de sésamo y chile, carne de cerdo picada con miso picante, bok choy y cacahuete tostado.</p>
+                            <footer id="pie-tantanmen" class="plato-pie">
+                                <ul id="alergenos-tantanmen" class="alergenos" aria-label="Alérgenos"><li class="alergeno" tabindex="0" data-tooltip="Contiene gluten (trigo)"><span aria-hidden="true">G</span><span class="solo-lectores">Contiene gluten (trigo)</span></li><li class="alergeno" tabindex="0" data-tooltip="Contiene soja"><span aria-hidden="true">S</span><span class="solo-lectores">Contiene soja</span></li><li class="alergeno" tabindex="0" data-tooltip="Contiene sésamo"><span aria-hidden="true">Sé</span><span class="solo-lectores">Contiene sésamo</span></li></ul>
+                                <p class="picante" tabindex="0" data-tooltip="Muy picante (3 de 3)"><span class="solo-lectores">Muy picante</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.6 7.2c2.9-.4 4.9 1.6 4.6 4.6-.5 5.3-6.3 10-14.2 10.2 4.6-2.4 7.4-6.6 7.6-11.5.1-1.8.8-3.1 2-3.3z"/><path d="M13.4 7.6c-.3-2.4.7-4.4 3-5.6l.8 1.4c-1.6.9-2.3 2.2-2 4z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.6 7.2c2.9-.4 4.9 1.6 4.6 4.6-.5 5.3-6.3 10-14.2 10.2 4.6-2.4 7.4-6.6 7.6-11.5.1-1.8.8-3.1 2-3.3z"/><path d="M13.4 7.6c-.3-2.4.7-4.4 3-5.6l.8 1.4c-1.6.9-2.3 2.2-2 4z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.6 7.2c2.9-.4 4.9 1.6 4.6 4.6-.5 5.3-6.3 10-14.2 10.2 4.6-2.4 7.4-6.6 7.6-11.5.1-1.8.8-3.1 2-3.3z"/><path d="M13.4 7.6c-.3-2.4.7-4.4 3-5.6l.8 1.4c-1.6.9-2.3 2.2-2 4z"/></svg></p>
+                            </footer>
+                        </div>
+                    </article>
+                    <article id="plato-yasai" class="plato plato--grande revelar" data-categoria="ramen" data-etiquetas="vegano" data-retraso="2">
+                        <figure id="foto-yasai" class="plato-foto">
+                            <img src="img/carta/vegano.jpg" alt="Ramen vegano con verduras, aguacate, champiñones y brotes" width="1024" height="768" loading="lazy">
+                            
+                        </figure>
+                        <div id="info-yasai" class="plato-info">
+                            <header id="cabecera-yasai" class="plato-cabecera">
+                                <h3>Yasai vegano <span lang="ja">野菜</span></h3>
+                                <p class="precio">13,50 €</p>
+                            </header>
+                            <p class="plato-descripcion">Caldo de verduras asadas, shiitake y kombu, tofu marinado y verduras de temporada de la Plaza de Abastos.</p>
+                            <footer id="pie-yasai" class="plato-pie">
+                                <ul id="alergenos-yasai" class="alergenos" aria-label="Alérgenos"><li class="alergeno" tabindex="0" data-tooltip="Contiene gluten (trigo)"><span aria-hidden="true">G</span><span class="solo-lectores">Contiene gluten (trigo)</span></li><li class="alergeno" tabindex="0" data-tooltip="Contiene soja"><span aria-hidden="true">S</span><span class="solo-lectores">Contiene soja</span></li><li class="alergeno" tabindex="0" data-tooltip="Contiene sésamo"><span aria-hidden="true">Sé</span><span class="solo-lectores">Contiene sésamo</span></li></ul>
+                                <p class="picante" tabindex="0" data-tooltip="Picante suave (1 de 3)"><span class="solo-lectores">Picante suave</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.6 7.2c2.9-.4 4.9 1.6 4.6 4.6-.5 5.3-6.3 10-14.2 10.2 4.6-2.4 7.4-6.6 7.6-11.5.1-1.8.8-3.1 2-3.3z"/><path d="M13.4 7.6c-.3-2.4.7-4.4 3-5.6l.8 1.4c-1.6.9-2.3 2.2-2 4z"/></svg></p><span class="insignia insignia--vegano" data-tooltip="Sin ingredientes de origen animal">Vegano</span>
+                            </footer>
+                        </div>
+                    </article>
+                </div>
+
+                <aside id="extras" class="revelar" aria-labelledby="titulo-extras">
+                    <h3 id="titulo-extras">Personaliza tu cuenco</h3>
+                    <table id="tabla-extras">
+                        <caption class="solo-lectores">Extras para el ramen y su precio</caption>
+                        <thead><tr><th scope="col">Extra</th><th scope="col">Precio</th></tr></thead>
+                        <tbody>
+                            <tr><td>Huevo ajitama</td><td>1,50 €</td></tr>
+                            <tr><td>Chashu extra (2 lonchas)</td><td>2,90 €</td></tr>
+                            <tr><td><span class="ayuda" tabindex="0" data-tooltip="Una segunda ración de fideos para el caldo que te queda">Kaedama</span> (fideo extra)</td><td>2,00 €</td></tr>
+                            <tr><td>Nori (3 hojas)</td><td>0,80 €</td></tr>
+                            <tr><td>Maíz y mantequilla</td><td>1,20 €</td></tr>
+                            <tr><td>Aceite de chile rayu aparte</td><td>Gratis</td></tr>
+                        </tbody>
+                    </table>
+                </aside>
+            </div>
+        </section>
+
+        <!-- Vídeo -->
+        <section id="video-preparacion" class="seccion" aria-labelledby="titulo-video">
+            <div id="video-contenido" class="contenedor">
+                <div id="video-texto" class="revelar">
+                    <p class="antetitulo"><span lang="ja">いただきます</span> Cómo se come</p>
+                    <h2 id="titulo-video">Sin miedo a sorber</h2>
+                    <p>En Japón el ramen se come rápido y caliente. Remueve el fideo con los palillos para que coja el caldo, sórbelo sin miedo (enfría y potencia el sabor) y usa la cuchara para el final.</p>
+                    <ul id="consejos-video">
+                        <li>Primero, prueba el caldo solo.</li>
+                        <li>Después, el fideo: no esperes o se pasará.</li>
+                        <li>Deja el huevo para el final.</li>
+                    </ul>
+                </div>
+                <figure id="video-figura" class="revelar" data-retraso="1">
+                    <video id="video-ramen" controls muted loop playsinline preload="metadata" poster="img/carta/video_poster.jpg" width="1280" height="720">
+                        <source src="img/carta/video_ramen.webm" type="video/webm">
+                        <source src="img/carta/video_ramen.mp4" type="video/mp4">
+                        Tu navegador no puede reproducir el vídeo.
+                    </video>
+                    <figcaption id="pie-video">Remover el fideo con los palillos antes de comer. Vídeo: Mixkit.</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <!-- Postres -->
+        <section id="seccion-postres" class="seccion seccion--clara seccion-carta" data-categoria="postres" aria-labelledby="titulo-postres">
+            <div id="postres-contenido" class="contenedor">
+                <div id="postres-cabecera" class="cabecera-seccion revelar">
+                    <p class="antetitulo"><span lang="ja">甘味</span> Para terminar</p>
+                    <h2 id="titulo-postres">Postres</h2>
+                </div>
+                <div id="lista-postres" class="rejilla-platos rejilla-platos--postres">
+                    <article id="plato-mochi" class="plato revelar" data-categoria="postres" data-etiquetas="sin-picante">
+                        <figure id="foto-mochi" class="plato-foto">
+                            <img src="img/carta/mochi.jpg" alt="Tres mochis de helado cortados por la mitad sobre un plato blanco" width="1024" height="768" loading="lazy">
+                            
+                        </figure>
+                        <div id="info-mochi" class="plato-info">
+                            <header id="cabecera-mochi" class="plato-cabecera">
+                                <h3>Mochi helado <span lang="ja">もち</span></h3>
+                                <p class="precio">5,50 €</p>
+                            </header>
+                            <p class="plato-descripcion">Tres bocados de pasta de arroz rellenos de helado: matcha, sésamo negro y fresa.</p>
+                            <footer id="pie-mochi" class="plato-pie">
+                                <ul id="alergenos-mochi" class="alergenos" aria-label="Alérgenos"><li class="alergeno" tabindex="0" data-tooltip="Contiene lácteos"><span aria-hidden="true">L</span><span class="solo-lectores">Contiene lácteos</span></li><li class="alergeno" tabindex="0" data-tooltip="Contiene sésamo"><span aria-hidden="true">Sé</span><span class="solo-lectores">Contiene sésamo</span></li></ul>
+                                
+                            </footer>
+                        </div>
+                    </article>
+                    <article id="plato-dorayaki" class="plato revelar" data-categoria="postres" data-etiquetas="sin-picante" data-retraso="1">
+                        <figure id="foto-dorayaki" class="plato-foto">
+                            <img src="img/carta/dorayaki.jpg" alt="Varios dorayakis apilados, tortitas doradas rellenas" width="1024" height="768" loading="lazy">
+                            
+                        </figure>
+                        <div id="info-dorayaki" class="plato-info">
+                            <header id="cabecera-dorayaki" class="plato-cabecera">
+                                <h3>Dorayaki <span lang="ja">どら焼き</span></h3>
+                                <p class="precio">4,90 €</p>
+                            </header>
+                            <p class="plato-descripcion">Dos tortitas esponjosas de miel rellenas de anko, crema dulce de judía roja. Recién hechas.</p>
+                            <footer id="pie-dorayaki" class="plato-pie">
+                                <ul id="alergenos-dorayaki" class="alergenos" aria-label="Alérgenos"><li class="alergeno" tabindex="0" data-tooltip="Contiene gluten (trigo)"><span aria-hidden="true">G</span><span class="solo-lectores">Contiene gluten (trigo)</span></li><li class="alergeno" tabindex="0" data-tooltip="Contiene huevo"><span aria-hidden="true">H</span><span class="solo-lectores">Contiene huevo</span></li><li class="alergeno" tabindex="0" data-tooltip="Contiene lácteos"><span aria-hidden="true">L</span><span class="solo-lectores">Contiene lácteos</span></li></ul>
+                                
+                            </footer>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mensaje cuando un filtro no deja ningún plato -->
+        <p id="sin-resultados" hidden>No hay platos con ese filtro. <button type="button" id="quitar-filtro" class="boton boton--rojo">Ver toda la carta</button></p>
+
+        <!-- Nota final -->
+        <section id="nota-carta" class="seccion" aria-labelledby="titulo-nota-carta">
+            <div id="nota-carta-contenido" class="contenedor revelar">
+                <h2 id="titulo-nota-carta">¿Alergias o intolerancias?</h2>
+                <p>Dínoslo al reservar o al llegar a la barra. Tenemos la información completa de los 14 alérgenos de cada plato a tu disposición. Precios con IVA incluido.</p>
+                <a class="boton boton--rojo" href="contacto.html#formulario-contacto">Reservar mesa</a>
+            </div>
+        </section>
+
+    </main>
+
+
+    <footer id="pie">
+        <div id="pie-contenido" class="contenedor">
+            <section id="pie-marca" aria-label="Nami Ramen">
+                <img src="img/logo_claro.svg" alt="Logotipo de Nami Ramen" width="481" height="160" loading="lazy">
+                <p>Ramen de caldo lento en el casco histórico de Santiago. Una barra pequeña, seis caldos y fideo hecho cada mañana.</p>
+                <div id="redes-pie" class="redes-sociales">
+                <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram de Nami Ramen (se abre en otra pestaña)" data-tooltip="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9zm0 2a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zm5.3-4.1a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4z"/></svg></a>
+                <a href="https://www.tiktok.com/" target="_blank" rel="noopener" aria-label="TikTok de Nami Ramen (se abre en otra pestaña)" data-tooltip="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.6 2h-3.3v13.2a2.9 2.9 0 1 1-2.9-2.9c.3 0 .6 0 .9.1V9a6.2 6.2 0 1 0 5.3 6.1V8.7a7.7 7.7 0 0 0 4.4 1.4V6.8a4.4 4.4 0 0 1-4.4-4.8z"/></svg></a>
+                <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook de Nami Ramen (se abre en otra pestaña)" data-tooltip="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8h3V4.5h-3c-2.8 0-4.5 1.8-4.5 4.6V11H7v3.5h2.5V22h3.6v-7.5h2.9l.5-3.5h-3.4V9.4c0-.9.4-1.4 1.4-1.4z"/></svg></a>
+            </div>
+            </section>
+            <section id="pie-horario">
+                <h2>Horario</h2>
+                <dl>
+                    <dt>Mar–Dom</dt><dd>13:00 – 16:00</dd>
+                    <dt></dt><dd>20:00 – 23:30</dd>
+                    <dt>Lunes</dt><dd>Cerrado</dd>
+                </dl>
+            </section>
+            <section id="pie-contacto">
+                <h2>Contacto</h2>
+                <ul>
+                    <li>Rúa da Raíña, 18<br>15705 Santiago de Compostela</li>
+                    <li><a href="tel:+34981000123">+34 981 000 123</a></li>
+                    <li><a href="mailto:hola@namiramen.gal">hola@namiramen.gal</a></li>
+                </ul>
+            </section>
+            <nav id="pie-navegacion" aria-label="Mapa del sitio">
+                <h2>Explora</h2>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="conocenos.html">Conócenos</a></li>
+                    <li><a href="carta.html">Carta</a></li>
+                    <li><a href="contacto.html">Contacto y reservas</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div id="pie-legal">
+            <div id="pie-legal-contenido" class="contenedor">
+                <p id="autoria">Sitio web diseñado y desarrollado por <strong>Miguel Tubío Vidal</strong> · DAW · IES San Clemente</p>
+                <p id="aviso-legal">© <span id="anho-actual">2026</span> Nami Ramen · restaurante ficticio (proyecto académico) · <button id="boton-creditos" type="button">Créditos de las fotos</button></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Ventana con la atribución de las imágenes (licencias Creative Commons) -->
+    <dialog id="dialogo-creditos" aria-labelledby="titulo-creditos">
+        <div class="dialogo-cabecera">
+            <h2 id="titulo-creditos">Créditos de las fotografías</h2>
+            <button id="cerrar-creditos" type="button" aria-label="Cerrar">×</button>
+        </div>
+        <ul id="lista-creditos"></ul>
+    </dialog>
+
+    <button id="boton-subir" type="button" aria-label="Volver arriba" data-tooltip="Volver arriba"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5l7 7-1.4 1.4L13 8.8V20h-2V8.8l-4.6 4.6L5 12z"/></svg></button>
+
+    <script src="js/comun.js"></script>
+    <script src="js/carta.js"></script>
+<script src="autotest.js"></script></body>
+</html>

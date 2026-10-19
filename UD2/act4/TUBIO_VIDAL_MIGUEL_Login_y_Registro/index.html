@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Iniciar sesión · Nodo</title>
+  <meta name="description" content="Inicia sesión en Nodo con tu correo y contraseña.">
+  <meta name="theme-color" content="#5B47F5">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@700;800&display=swap">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/app.js" defer></script>
+</head>
+<body data-page="login">
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <div class="auth">
+    <aside class="brand" aria-label="Nodo">
+      <span class="brand__deco brand__deco--1" aria-hidden="true"></span>
+      <span class="brand__deco brand__deco--2" aria-hidden="true"></span>
+      <span class="brand__deco brand__deco--3" aria-hidden="true"></span>
+      <span class="brand__deco brand__deco--4" aria-hidden="true"></span>
+      <span class="brand__deco brand__deco--5" aria-hidden="true"></span>
+
+      <a class="logo" href="index.html"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><rect width="34" height="34" rx="10" fill="#FFFFFF"/><path d="M11.5 12L22.5 14.2M12 13.2l2.6 9M22.6 15.2L15.6 22.6" stroke="#5B47F5" stroke-width="2" stroke-linecap="round" fill="none"/><circle cx="11" cy="11.5" r="3.6" fill="#5B47F5"/><circle cx="23.2" cy="14.4" r="3" fill="#5B47F5"/><circle cx="14.8" cy="23.2" r="3.6" fill="#5B47F5"/></svg><span>nodo</span></a>
+
+      <div class="brand__art" aria-hidden="true">
+        <div class="project-card">
+          <div class="project-card__head">
+            <span class="project-card__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19c1.5-5 4.5-9 14-14-1 7-6 12-12 13"/><path d="M5 19l4-4"/></svg></span>
+            <span class="project-card__title"><strong>Lanzamiento v2.0</strong><span>Equipo de producto · 12 tareas</span></span>
+            <span class="pill">Hoy</span>
+          </div>
+          <div>
+            <div class="project-card__progress"><span>Progreso</span><span>72%</span></div>
+            <div class="bar"><span></span></div>
+          </div>
+          <div class="avatars">
+            <span class="av av--1">AL</span><span class="av av--2">MT</span><span class="av av--3">SR</span><span class="av av--4">+4</span>
+          </div>
+        </div>
+        <div class="secure-badge">
+          <span class="secure-badge__icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1FA971" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6l8-3z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></span>
+          <span><strong>Acceso protegido</strong><small>Verificación por código</small></span>
+        </div>
+      </div>
+
+      <div class="brand__copy">
+        <h2>Todo tu trabajo,<br>conectado.</h2>
+        <p>Organiza proyectos, comparte ideas y colabora con tu equipo desde un único lugar. Tus datos, siempre seguros.</p>
+        <div class="dots" aria-hidden="true"><span></span><span></span><span></span></div>
+      </div>
+    </aside>
+
+    <main class="main" id="contenido">
+      <div class="main__top">
+        <a class="logo" href="index.html"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><rect width="34" height="34" rx="10" fill="#5B47F5"/><path d="M11.5 12L22.5 14.2M12 13.2l2.6 9M22.6 15.2L15.6 22.6" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" fill="none"/><circle cx="11" cy="11.5" r="3.6" fill="#FFFFFF"/><circle cx="23.2" cy="14.4" r="3" fill="#FFFFFF"/><circle cx="14.8" cy="23.2" r="3.6" fill="#FFFFFF"/></svg><span>nodo</span></a>
+        <a class="main__help" href="mailto:soporte@nodo.app">¿Necesitas ayuda?</a>
+      </div>
+
+      <section class="card" aria-labelledby="titulo">
+        <div class="heading">
+          <h1 id="titulo">Bienvenido de nuevo</h1>
+          <p>Inicia sesión para continuar donde lo dejaste.</p>
+        </div>
+
+        <form class="form" id="login-form" novalidate>
+          <p class="form-error" role="alert" hidden><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7.5v5M12 16.3v.2"/></svg><span></span></p>
+          <div class="fields">
+            <div class="field">
+              <label class="field__label" for="email">Correo electrónico</label>
+              <div class="field__box">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 7.5l8.5 5.5 8.5-5.5"/></svg>
+                <input id="email" name="email" type="email" placeholder="tu@correo.com" autocomplete="email" data-rule="email" aria-describedby="email-error" required>
+              </div>
+              <p class="field__error" id="email-error" hidden><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7.5v5M12 16.3v.2"/></svg><span></span></p>
+            </div>
+            <div class="field">
+              <label class="field__label" for="password">Contraseña</label>
+              <div class="field__box">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5"/><path d="M8 10.5V7.5a4 4 0 018 0v3"/></svg>
+                <input id="password" name="password" type="password" placeholder="Introduce tu contraseña" autocomplete="current-password" data-rule="password-login" aria-describedby="password-error" required>
+                <button class="field__toggle" type="button" aria-label="Mostrar contraseña" aria-pressed="false" aria-controls="password"><svg class="icon-show" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 12s3.5-6.5 9.5-6.5 9.5 6.5 9.5 6.5-3.5 6.5-9.5 6.5S2.5 12 2.5 12z"/><circle cx="12" cy="12" r="3"/></svg><svg class="icon-hide" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3l18 18"/><path d="M10.6 5.6c.5-.1.9-.1 1.4-.1 6 0 9.5 6.5 9.5 6.5a17 17 0 01-2.6 3.4M6.6 6.6C4 8.3 2.5 12 2.5 12s3.5 6.5 9.5 6.5c1.7 0 3.2-.5 4.5-1.2"/><path d="M9.9 9.9a3 3 0 004.2 4.2"/></svg></button>
+              </div>
+              <p class="field__error" id="password-error" hidden><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7.5v5M12 16.3v.2"/></svg><span></span></p>
+            </div>
+            <div class="options">
+              <label class="check"><input type="checkbox" id="recordar" name="recordar" checked><span>Recordarme</span></label>
+              <a href="recuperar.html">¿Olvidaste tu contraseña?</a>
+            </div>
+          </div>
+          <button class="btn btn--primary" type="submit">Iniciar sesión</button>
+        </form>
+
+        <div class="divider">o continúa con</div>
+
+        <div class="social">
+          <button class="btn-social" type="button" data-provider="Google"><svg width="20" height="20" viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>Google</button>
+          <button class="btn-social" type="button" data-provider="Facebook"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#1877F2"/><path fill="#FFFFFF" d="M15.1 15.5l.5-3.5h-3.3V9.8c0-1 .5-1.9 2-1.9h1.5V4.9s-1.4-.2-2.7-.2c-2.7 0-4.5 1.7-4.5 4.7V12H5.6v3.5h3v8.4a12 12 0 003.7 0v-8.4h2.8z"/></svg>Facebook</button>
+          <button class="btn-social" type="button" data-provider="Apple"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="#16151D" d="M16.4 12.7c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.1-2.8.8-3.5.8-.7 0-1.9-.8-3-.8-1.6 0-3 .9-3.8 2.3-1.6 2.8-.4 7 1.2 9.3.8 1.1 1.7 2.4 2.9 2.3 1.2 0 1.6-.7 3-.7s1.8.7 3 .7c1.3 0 2.1-1.1 2.8-2.3.9-1.3 1.3-2.6 1.3-2.6s-2.4-.9-2.5-3.7zM14.1 5.9c.6-.8 1.1-1.9 1-2.9-.9 0-2.1.6-2.7 1.4-.6.7-1.1 1.8-1 2.8 1 .1 2.1-.5 2.7-1.3z"/></svg>Apple</button>
+        </div>
+
+        <p class="switch">¿No tienes cuenta? <a href="registro.html">Regístrate</a></p>
+      </section>
+
+      <footer class="main__footer">© 2026 Nodo · <a href="#">Privacidad</a> · <a href="#">Términos</a></footer>
+    </main>
+  </div>
+
+  <div class="toasts" id="toasts" aria-live="polite"></div>
+</body>
+</html>

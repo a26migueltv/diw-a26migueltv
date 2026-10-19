@@ -1,0 +1,284 @@
+/* =========================================================
+   NAMI RAMEN · estilos de Conócenos (conocenos.html)
+   ========================================================= */
+
+/* ---------- Introducción ---------- */
+#introduccion-contenido {
+    display: grid;
+    grid-template-columns: 5fr 7fr;
+    gap: clamp(28px, 6vw, 80px);
+    align-items: start;
+}
+.entradilla {
+    font-family: var(--fuente-titulos);
+    font-size: var(--texto-l);
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+/* ---------- Línea temporal ---------- */
+#hitos {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+/* Línea vertical central */
+#hitos::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    background: linear-gradient(var(--rojo), var(--oro));
+    transform: translateX(-50%);
+}
+.hito {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    padding: 34px 0;
+}
+/* Punto sobre la línea */
+.hito::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 20px;
+    height: 20px;
+    border: 4px solid var(--tinta);
+    border-radius: 50%;
+    background: var(--oro);
+    box-shadow: 0 0 0 2px var(--oro);
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    transition: background-color .3s, transform .3s;
+}
+.hito:hover::before {
+    background: var(--rojo);
+    transform: translate(-50%, -50%) scale(1.25);
+}
+/* Alternar lados */
+.hito:nth-child(even) .hito-imagen { order: 2; }
+.hito:nth-child(even) .hito-texto { text-align: right; }
+.hito--sin-imagen .hito-texto {
+    grid-column: 2;
+}
+
+.hito-imagen img {
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    border-radius: var(--radio);
+    filter: grayscale(.35);
+    transition: filter .4s, transform .4s;
+}
+.hito:hover .hito-imagen img {
+    filter: none;
+    transform: scale(1.02);
+}
+.hito-anho {
+    display: block;
+    font-family: var(--fuente-titulos);
+    font-size: clamp(2.4rem, 5vw, 3.6rem);
+    font-weight: 800;
+    line-height: 1;
+    color: var(--oro);
+    margin-bottom: 10px;
+}
+.hito-texto p {
+    color: var(--papel-oscuro);
+    margin: 0;
+}
+
+/* ---------- Filosofía ---------- */
+#valores {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--hueco);
+}
+.valor {
+    padding: 36px 30px;
+    border-radius: var(--radio);
+    background: var(--blanco);
+    box-shadow: var(--sombra-suave);
+    transition: transform .3s, box-shadow .3s;
+}
+.valor:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--sombra);
+}
+.valor-icono {
+    width: 58px;
+    height: 58px;
+    margin-bottom: 18px;
+    fill: var(--rojo);
+    stroke: var(--rojo);
+}
+.valor p {
+    margin: 0;
+    color: var(--gris);
+}
+
+/* ---------- Galería ---------- */
+.seccion--clara { background: var(--papel-oscuro); }
+
+#galeria-fotos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.foto-galeria {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: 0;
+    border-radius: var(--radio);
+    overflow: hidden;
+    background: var(--tinta);
+    cursor: zoom-in;
+}
+.foto-galeria img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    transition: transform .5s, opacity .3s;
+}
+.foto-galeria::after {
+    content: "+";
+    position: absolute;
+    right: 12px;
+    bottom: 12px;
+    display: grid;
+    place-items: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: var(--rojo);
+    color: var(--blanco);
+    font-size: 24px;
+    line-height: 1;
+    opacity: 0;
+    transform: scale(.6);
+    transition: opacity .3s, transform .3s;
+}
+.foto-galeria:hover img,
+.foto-galeria:focus-visible img {
+    transform: scale(1.07);
+    opacity: .85;
+}
+.foto-galeria:hover::after,
+.foto-galeria:focus-visible::after {
+    opacity: 1;
+    transform: none;
+}
+
+/* Visor a pantalla completa */
+#visor {
+    position: fixed;
+    inset: 0;
+    z-index: 90;
+    display: grid;
+    grid-template-columns: 70px 1fr 70px;
+    align-items: center;
+    gap: 10px;
+    padding: 24px;
+    background: rgba(17, 15, 13, .94);
+    animation: aparecer .25s ease;
+}
+#visor[hidden] { display: none; }
+@keyframes aparecer {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+#visor-figura {
+    margin: 0;
+    text-align: center;
+}
+#visor-imagen {
+    max-height: 80vh;
+    margin: 0 auto;
+    border-radius: var(--radio);
+    box-shadow: 0 20px 60px rgba(0,0,0,.5);
+}
+#visor-pie {
+    margin-top: 14px;
+    color: var(--papel);
+}
+#visor button {
+    width: 56px;
+    height: 56px;
+    border: 1px solid rgba(243,236,224,.35);
+    border-radius: 50%;
+    background: transparent;
+    color: var(--papel);
+    font-size: 30px;
+    line-height: 1;
+    cursor: pointer;
+    transition: background-color .2s;
+}
+#visor button:hover { background: var(--rojo); border-color: var(--rojo); }
+#visor-cerrar {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+#visor-cerrar[data-tooltip]::after {
+    bottom: auto;
+    top: calc(100% + 10px);
+    left: auto;
+    right: 0;
+    transform: none;
+}
+#visor-cerrar[data-tooltip]::before { display: none !important; }
+
+/* ---------- Llamada final ---------- */
+#conocenos-cta-contenido {
+    text-align: center;
+}
+#conocenos-cta h2 {
+    max-width: 760px;
+    margin: 0 auto 30px;
+}
+#conocenos-cta-botones {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+    #introduccion-contenido { grid-template-columns: 1fr; }
+    #valores { grid-template-columns: 1fr; }
+    #galeria-fotos { grid-template-columns: repeat(2, 1fr); }
+
+    /* La línea temporal pasa a una sola columna, con la línea a la izquierda */
+    #hitos::before { left: 10px; }
+    .hito {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        padding: 26px 0 26px 44px;
+    }
+    .hito::before { left: 10px; top: 46px; }
+    .hito:nth-child(even) .hito-imagen { order: 0; }
+    .hito:nth-child(even) .hito-texto { text-align: left; }
+    .hito--sin-imagen .hito-texto { grid-column: 1; }
+}
+
+@media (max-width: 560px) {
+    #visor {
+        grid-template-columns: 1fr 1fr;
+        padding: 70px 12px 20px;
+    }
+    #visor-figura { grid-column: 1 / -1; grid-row: 1; }
+    #visor-anterior { justify-self: end; }
+}

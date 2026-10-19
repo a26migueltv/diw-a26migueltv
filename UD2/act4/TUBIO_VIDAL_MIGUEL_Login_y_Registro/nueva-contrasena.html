@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nueva contraseña · Nodo</title>
+  <meta name="description" content="Establece una nueva contraseña para tu cuenta de Nodo.">
+  <meta name="theme-color" content="#5B47F5">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@700;800&display=swap">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/app.js" defer></script>
+</head>
+<body data-page="nueva-contrasena">
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <div class="auth">
+    <aside class="brand" aria-label="Nodo">
+      <span class="brand__deco brand__deco--1" aria-hidden="true"></span>
+      <span class="brand__deco brand__deco--2" aria-hidden="true"></span>
+      <span class="brand__deco brand__deco--3" aria-hidden="true"></span>
+      <span class="brand__deco brand__deco--4" aria-hidden="true"></span>
+      <span class="brand__deco brand__deco--5" aria-hidden="true"></span>
+
+      <a class="logo" href="index.html"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><rect width="34" height="34" rx="10" fill="#FFFFFF"/><path d="M11.5 12L22.5 14.2M12 13.2l2.6 9M22.6 15.2L15.6 22.6" stroke="#5B47F5" stroke-width="2" stroke-linecap="round" fill="none"/><circle cx="11" cy="11.5" r="3.6" fill="#5B47F5"/><circle cx="23.2" cy="14.4" r="3" fill="#5B47F5"/><circle cx="14.8" cy="23.2" r="3.6" fill="#5B47F5"/></svg><span>nodo</span></a>
+
+      <div class="brand__art" aria-hidden="true">
+        <div class="project-card">
+          <div class="project-card__head">
+            <span class="project-card__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19c1.5-5 4.5-9 14-14-1 7-6 12-12 13"/><path d="M5 19l4-4"/></svg></span>
+            <span class="project-card__title"><strong>Lanzamiento v2.0</strong><span>Equipo de producto · 12 tareas</span></span>
+            <span class="pill">Hoy</span>
+          </div>
+          <div>
+            <div class="project-card__progress"><span>Progreso</span><span>72%</span></div>
+            <div class="bar"><span></span></div>
+          </div>
+          <div class="avatars">
+            <span class="av av--1">AL</span><span class="av av--2">MT</span><span class="av av--3">SR</span><span class="av av--4">+4</span>
+          </div>
+        </div>
+        <div class="secure-badge">
+          <span class="secure-badge__icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1FA971" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6l8-3z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></span>
+          <span><strong>Acceso protegido</strong><small>Verificación por código</small></span>
+        </div>
+      </div>
+
+      <div class="brand__copy">
+        <h2>Todo tu trabajo,<br>conectado.</h2>
+        <p>Organiza proyectos, comparte ideas y colabora con tu equipo desde un único lugar. Tus datos, siempre seguros.</p>
+        <div class="dots" aria-hidden="true"><span></span><span></span><span></span></div>
+      </div>
+    </aside>
+
+    <main class="main" id="contenido">
+      <div class="main__top">
+        <a class="logo" href="index.html"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><rect width="34" height="34" rx="10" fill="#5B47F5"/><path d="M11.5 12L22.5 14.2M12 13.2l2.6 9M22.6 15.2L15.6 22.6" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" fill="none"/><circle cx="11" cy="11.5" r="3.6" fill="#FFFFFF"/><circle cx="23.2" cy="14.4" r="3" fill="#FFFFFF"/><circle cx="14.8" cy="23.2" r="3.6" fill="#FFFFFF"/></svg><span>nodo</span></a>
+        <a class="main__help" href="mailto:soporte@nodo.app">¿Necesitas ayuda?</a>
+      </div>
+
+      <section class="card" aria-labelledby="titulo">
+        <div class="badge" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5"/><path d="M8 10.5V7.5a4 4 0 018 0v3"/></svg></div>
+        <div class="heading">
+          <h1 id="titulo">Nueva contraseña</h1>
+          <p>Debe ser diferente de las contraseñas que hayas usado antes en <strong data-email>tu cuenta</strong>.</p>
+        </div>
+
+        <form class="form" id="password-form" novalidate>
+          <div class="fields">
+            <div class="field-group">
+              <div class="field">
+                <label class="field__label" for="password">Nueva contraseña</label>
+                <div class="field__box">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5"/><path d="M8 10.5V7.5a4 4 0 018 0v3"/></svg>
+                  <input id="password" name="password" type="password" placeholder="Mínimo 8 caracteres" autocomplete="new-password" data-rule="password" aria-describedby="password-error" required>
+                  <button class="field__toggle" type="button" aria-label="Mostrar contraseña" aria-pressed="false" aria-controls="password"><svg class="icon-show" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 12s3.5-6.5 9.5-6.5 9.5 6.5 9.5 6.5-3.5 6.5-9.5 6.5S2.5 12 2.5 12z"/><circle cx="12" cy="12" r="3"/></svg><svg class="icon-hide" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3l18 18"/><path d="M10.6 5.6c.5-.1.9-.1 1.4-.1 6 0 9.5 6.5 9.5 6.5a17 17 0 01-2.6 3.4M6.6 6.6C4 8.3 2.5 12 2.5 12s3.5 6.5 9.5 6.5c1.7 0 3.2-.5 4.5-1.2"/><path d="M9.9 9.9a3 3 0 004.2 4.2"/></svg></button>
+                </div>
+                <p class="field__error" id="password-error" hidden><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7.5v5M12 16.3v.2"/></svg><span></span></p>
+              </div>
+              <div class="meter" data-meter-for="password" data-level="0">
+                <div class="meter__bars" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+                <div class="meter__text"><span>Seguridad de la contraseña</span><strong aria-live="polite">—</strong></div>
+              </div>
+              <p class="sr-only">Requisitos de la contraseña:</p>
+              <ul class="reqs" data-reqs-for="password">
+                <li data-req="len">Al menos 8 caracteres</li>
+                <li data-req="case">Una mayúscula y una minúscula</li>
+                <li data-req="num">Al menos un número</li>
+                <li data-req="sym">Al menos un símbolo (!@#$…)</li>
+              </ul>
+            </div>
+            <div class="field">
+              <label class="field__label" for="confirm">Confirmar contraseña</label>
+              <div class="field__box">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5"/><path d="M8 10.5V7.5a4 4 0 018 0v3"/></svg>
+                <input id="confirm" name="confirm" type="password" placeholder="Repite la contraseña" autocomplete="new-password" data-rule="confirm" aria-describedby="confirm-error" required>
+                <button class="field__toggle" type="button" aria-label="Mostrar contraseña" aria-pressed="false" aria-controls="confirm"><svg class="icon-show" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 12s3.5-6.5 9.5-6.5 9.5 6.5 9.5 6.5-3.5 6.5-9.5 6.5S2.5 12 2.5 12z"/><circle cx="12" cy="12" r="3"/></svg><svg class="icon-hide" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3l18 18"/><path d="M10.6 5.6c.5-.1.9-.1 1.4-.1 6 0 9.5 6.5 9.5 6.5a17 17 0 01-2.6 3.4M6.6 6.6C4 8.3 2.5 12 2.5 12s3.5 6.5 9.5 6.5c1.7 0 3.2-.5 4.5-1.2"/><path d="M9.9 9.9a3 3 0 004.2 4.2"/></svg></button>
+              </div>
+              <p class="field__error" id="confirm-error" hidden><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7.5v5M12 16.3v.2"/></svg><span></span></p>
+            </div>
+          </div>
+          <button class="btn btn--primary" type="submit">Guardar contraseña</button>
+        </form>
+      </section>
+
+      <footer class="main__footer">© 2026 Nodo · <a href="#">Privacidad</a> · <a href="#">Términos</a></footer>
+    </main>
+  </div>
+
+  <div class="toasts" id="toasts" aria-live="polite"></div>
+</body>
+</html>
