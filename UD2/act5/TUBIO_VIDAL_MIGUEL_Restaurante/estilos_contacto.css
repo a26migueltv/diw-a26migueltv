@@ -45,13 +45,24 @@
     padding: 13px 15px;
     border: 1.5px solid #CFC3AF;
     border-radius: var(--radio);
-    background: var(--blanco);
+    background-color: var(--blanco);
     color: var(--tinta);
     font-family: var(--fuente-texto);
     font-size: var(--texto-m);
     transition: border-color .2s, box-shadow .2s;
 }
 .campo textarea { resize: vertical; min-height: 130px; }
+/* Desplegables: flecha propia más grande y separada del borde derecho */
+.campo select {
+    -webkit-appearance: none;
+    appearance: none;
+    padding-right: 56px;
+    background-image: url(img/iconos/flecha_selector.svg);
+    background-repeat: no-repeat;
+    background-position: right 18px center;
+    background-size: 22px 22px;
+    cursor: pointer;
+}
 .campo input:focus,
 .campo select:focus,
 .campo textarea:focus {
@@ -60,12 +71,115 @@
     box-shadow: 0 0 0 3px rgba(227, 168, 87, .45);
 }
 
+/* ---------- Desplegable propio (js/desplegable.js) ----------
+   La lista nativa de un <select> la pinta el sistema (azul en macOS) y no
+   admite CSS, así que se sustituye por una lista con los colores de Nami.
+   El <select> sigue en la página, oculto, para validar y enviar. */
+.campo { position: relative; }
+.select-mejorado {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+}
+.desplegable { position: relative; }
+.desplegable-boton {
+    position: relative;
+    display: block;
+    width: 100%;
+    min-height: 52px;
+    padding: 13px 56px 13px 15px;
+    border: 1.5px solid #CFC3AF;
+    border-radius: var(--radio);
+    background: var(--blanco);
+    color: var(--tinta);
+    font-family: var(--fuente-texto);
+    font-size: var(--texto-m);
+    text-align: left;
+    cursor: pointer;
+    transition: border-color .2s, box-shadow .2s;
+}
+.desplegable--vacio .desplegable-valor { color: var(--gris); }
+.desplegable-boton::after {
+    content: "";
+    position: absolute;
+    right: 18px;
+    top: 50%;
+    width: 22px;
+    height: 22px;
+    margin-top: -11px;
+    background: url(img/iconos/flecha_selector.svg) center / 22px 22px no-repeat;
+    transition: transform .25s;
+}
+.desplegable--abierto .desplegable-boton::after { transform: rotate(180deg); }
+.desplegable-boton:focus-visible,
+.desplegable--abierto .desplegable-boton {
+    outline: none;
+    border-color: var(--tinta);
+    box-shadow: 0 0 0 3px rgba(227, 168, 87, .45);
+}
+.desplegable-lista {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    right: 0;
+    z-index: 30;
+    max-height: 290px;
+    margin: 0;
+    padding: 6px;
+    overflow-y: auto;
+    list-style: none;
+    border: 1.5px solid var(--tinta);
+    border-radius: var(--radio);
+    background: var(--blanco);
+    box-shadow: var(--sombra);
+    animation: desplegar .18s ease;
+}
+.desplegable-lista:focus { outline: none; }
+.desplegable-opcion {
+    position: relative;
+    padding: 9px 14px 9px 34px;
+    border-radius: 4px;
+    font-size: var(--texto-m);
+    cursor: pointer;
+}
+.desplegable-opcion--vacia { color: var(--gris); }
+/* Opción elegida: en rojo y con un naruto delante */
+.desplegable-opcion[aria-selected="true"] { color: var(--rojo); font-weight: 700; }
+.desplegable-opcion[aria-selected="true"]::before {
+    content: "";
+    position: absolute;
+    left: 9px;
+    top: 50%;
+    width: 16px;
+    height: 16px;
+    margin-top: -8px;
+    background: url(img/iconos/naruto.svg) center / contain no-repeat;
+}
+/* Opción bajo el ratón o el teclado: bermellón de la marca (en vez del azul del sistema) */
+.desplegable-opcion.activa,
+.desplegable-opcion:hover {
+    background: var(--rojo);
+    color: var(--blanco);
+}
+.desplegable-grupo {
+    padding: 10px 14px 4px;
+    font-size: var(--texto-xs);
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--oro);
+}
+.campo.error .desplegable-boton { border-color: var(--rojo); background-color: #FBF1EF; }
+.campo.correcto .desplegable-boton { border-color: #5E8A4F; }
+
 /* Estados de validación */
 .campo.error input,
 .campo.error select,
 .campo.error textarea {
     border-color: var(--rojo);
-    background: #FBF1EF;
+    background-color: #FBF1EF;
 }
 .campo.correcto input,
 .campo.correcto select,
@@ -203,9 +317,8 @@
     height: 64px;
     margin: 0 auto 14px;
     border-radius: 50%;
-    background: #5E8A4F;
-    color: var(--blanco);
-    font-size: 2rem;
+    border: 2px solid #5E8A4F;
+    background: var(--papel);
 }
 
 /* ---------- Tarjeta de datos ---------- */
@@ -280,14 +393,117 @@
     align-items: center;
 }
 #mapa-texto p { color: var(--papel-oscuro); }
+#guia-llegar { color: var(--papel-oscuro); font-size: var(--texto-s); margin-bottom: 30px; }
+#guia-llegar strong { color: var(--oro); }
+#desde-donde {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px 16px;
+    margin-bottom: 18px;
+    padding: 16px 18px;
+    border: 1px dashed rgba(227, 168, 87, .5);
+    border-radius: var(--radio);
+}
+#desde-donde .boton { padding: 10px 20px; }
+#resultado-ubicacion { flex: 1 1 200px; margin: 0; font-size: var(--texto-xs); }
+#resultado-ubicacion strong { color: var(--oro); }
+#botones-mapa { display: flex; flex-wrap: wrap; gap: 12px; }
+
+/* Mapa con la identidad de Nami (rojo shu y negro sumi): marco tinta con
+   borde rojo, cabecera tipo noren (cortina roja de las tiendas japonesas),
+   el mapa de Google teñido con filtros CSS y banda de olas roja.
+   Un mapa incrustado de Google no se puede restilizar por dentro (haría falta
+   la Maps JavaScript API con clave), así que el color va por fuera. */
+#mapa-marco {
+    margin: 0;
+    overflow: hidden;
+    border: 2px solid var(--rojo);
+    border-radius: 10px;
+    background: var(--tinta-suave);
+    box-shadow: var(--sombra);
+}
+#noren-mapa {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 18px;
+    background-color: var(--rojo);
+    /* Dos cortes verticales: los paneles de la cortina noren */
+    background-image: linear-gradient(90deg, transparent calc(50% - 1px), rgba(26, 23, 20, .45) calc(50% - 1px), rgba(26, 23, 20, .45) calc(50% + 1px), transparent calc(50% + 1px), transparent calc(75% - 1px), rgba(26, 23, 20, .45) calc(75% - 1px), rgba(26, 23, 20, .45) calc(75% + 1px), transparent calc(75% + 1px));
+    color: var(--papel);
+    overflow: hidden;
+}
+#noren-mapa img { width: 42px; height: 42px; flex-shrink: 0; border-radius: 50%; box-shadow: 0 0 0 2px var(--papel); }
+#noren-mapa p { display: grid; margin: 0; line-height: 1.3; font-size: var(--texto-xs); color: var(--papel) !important; }
+#noren-mapa strong { font-family: var(--fuente-titulos); font-size: var(--texto-m); }
+#estado-mapa {
+    margin-left: auto;
+    padding: 4px 12px;
+    border-radius: 999px;
+    background: var(--tinta);
+    font-size: var(--texto-xs);
+    font-weight: 700;
+    color: var(--oro);
+    white-space: nowrap;
+    position: relative;
+    z-index: 1;
+}
+#estado-mapa.cerrado { color: #E58C84; }
+.kanji-noren {
+    position: absolute;
+    right: 150px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: var(--fuente-titulos);
+    font-size: 2.6rem;
+    font-weight: 800;
+    color: rgba(26, 23, 20, .28);
+    pointer-events: none;
+}
+#mapa-ventana {
+    position: relative;
+    border-top: 2px solid var(--tinta);
+    background: var(--papel-oscuro);
+}
 #mapa-google {
     width: 100%;
     height: 420px;
     border: 0;
-    border-radius: var(--radio);
-    filter: grayscale(.25) contrast(1.05);
-    background: var(--tinta-suave);
+    filter: sepia(.3) saturate(1.15) hue-rotate(-8deg) contrast(1.12);
+    transition: filter .5s;
 }
+#mapa-marco.en-color #mapa-google { filter: none; }
+/* Banda de olas roja sobre negro, debajo del mapa */
+#mapa-ventana::after {
+    content: "";
+    display: block;
+    height: 20px;
+    background: url(img/iconos/olas_rojo.svg) repeat-x 0 0 / 40px 20px, var(--tinta);
+}
+#pie-mapa {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 14px 12px;
+    font-size: var(--texto-xs);
+    color: var(--papel-oscuro);
+}
+.boton-mapa {
+    padding: 6px 14px;
+    border: 1.5px solid var(--papel);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--papel);
+    font: 700 var(--texto-xs) var(--fuente-texto);
+    cursor: pointer;
+    transition: background-color .2s, color .2s;
+}
+.boton-mapa:hover,
+.boton-mapa[aria-pressed="true"] { background: var(--papel); color: var(--tinta); }
+.boton-mapa[data-tooltip]::after { left: auto; right: 0; transform: none; }
 
 /* ---------- Preguntas frecuentes ---------- */
 #lista-preguntas {
@@ -336,4 +552,15 @@
     #mapa-contenido { grid-template-columns: 1fr; }
     #info-contacto { position: static; }
     #mapa-google { height: 340px; }
+    .kanji-noren { display: none; }
+    #noren-mapa { flex-wrap: wrap; background-image: none; }
 }
+
+/* «Abrir en Google Maps» queda como enlace secundario bajo la ruta */
+#botones-mapa { align-items: center; }
+#enlace-mapa-google {
+    color: var(--papel-oscuro);
+    font-size: var(--texto-s);
+    font-weight: 700;
+}
+#enlace-mapa-google:hover { color: var(--oro); }

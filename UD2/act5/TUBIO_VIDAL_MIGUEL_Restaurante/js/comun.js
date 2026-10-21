@@ -139,6 +139,7 @@ const CREDITOS = [
     ['La mesa', 'Condiments - Ramen Ya', 'avlxyz', 'CC BY-SA 2.0', 'https://www.flickr.com/photos/10559879@N00/3023980747'],
     ['Cabecera de Contacto', 'Ramen restaurant', 'Japanexperterna.se', 'CC BY-SA 2.0', 'https://www.flickr.com/photos/68532869@N08/14169119300'],
     ['Vídeo de la carta', 'Hand holding chopsticks and stirs ramen with them', 'Mixkit', 'Licencia gratuita de Mixkit', 'https://mixkit.co/free-stock-video/hand-holding-chopsticks-and-stirs-ramen-with-them-46789/'],
+    ['Iconos de alérgenos (carta)', 'Iconos de los 14 alérgenos', 'Francisco José Ortega Reina (Ingeniería de Menú)', 'Descarga gratuita', 'https://ingenieriademenu.com/'],
 ];
 
 const dialogoCreditos = document.getElementById('dialogo-creditos');
@@ -150,7 +151,7 @@ CREDITOS.forEach(([uso, titulo, autor, licencia, url]) => {
     listaCreditos.appendChild(li);
 });
 const notaFotos = document.createElement('li');
-notaFotos.textContent = 'Fotografías recomprimidas para la web (vídeo recortado de resolución y sin sonido). Logotipo y textos: Miguel Tubío Vidal. Tipografías Shippori Mincho B1 y Zen Kaku Gothic New (SIL Open Font License).';
+notaFotos.textContent = 'Fotografías recomprimidas para la web (vídeo recortado de resolución y sin sonido). Logotipo, iconos SVG (cuenco, palillos, sushi, naruto, dango, olas) y textos: Miguel Tubío Vidal. Tipografías Shippori Mincho B1 y Zen Kaku Gothic New (SIL Open Font License).';
 listaCreditos.appendChild(notaFotos);
 
 document.getElementById('boton-creditos').addEventListener('click', () => dialogoCreditos.showModal());

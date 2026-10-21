@@ -259,3 +259,66 @@ if (location.hash === '#formulario-contacto' && !campos.motivo.value) {
     campos.motivo.value = 'reserva';
     actualizarReserva();
 }
+
+/* ---------- Mapa: ficha con el estado y botón «Ver en color» ---------- */
+const marcoMapa = document.getElementById('mapa-marco');
+const botonColorMapa = document.getElementById('boton-color-mapa');
+const estadoMapa = document.getElementById('estado-mapa');
+if (estadoMapa && typeof estadoRestaurante === 'function') {
+    const e = estadoRestaurante();
+    estadoMapa.textContent = e.abierto ? 'Abierto ahora' : 'Cerrado ahora';
+    estadoMapa.classList.toggle('cerrado', !e.abierto);
+}
+if (botonColorMapa) {
+    botonColorMapa.addEventListener('click', () => {
+        const enColor = marcoMapa.classList.toggle('en-color');
+        botonColorMapa.setAttribute('aria-pressed', enColor);
+        botonColorMapa.textContent = enColor ? 'Ver en colores de Nami' : 'Ver en color';
+        botonColorMapa.dataset.tooltip = enColor ? 'Vuelve al mapa en papel y tinta' : 'Muestra el mapa con sus colores originales';
+    });
+}
+
+/* ---------- «¿A cuánto estoy?»: distancia desde la ubicación del usuario ----------
+   Usa la API de geolocalización del navegador (pide permiso) y calcula la
+   distancia en línea recta con la fórmula del semiverseno (haversine).
+   Coordenadas aproximadas de la Rúa da Raíña, Santiago de Compostela. */
+const NAMI_POSICION = { lat: 42.8792, lon: -8.5447 };
+const botonUbicacion = document.getElementById('boton-ubicacion');
+const resultadoUbicacion = document.getElementById('resultado-ubicacion');
+
+function distanciaKm(a, b) {
+    const rad = g => g * Math.PI / 180;
+    const dLat = rad(b.lat - a.lat), dLon = rad(b.lon - a.lon);
+    const h = Math.sin(dLat / 2) ** 2 + Math.cos(rad(a.lat)) * Math.cos(rad(b.lat)) * Math.sin(dLon / 2) ** 2;
+    return 2 * 6371 * Math.asin(Math.sqrt(h));
+}
+
+function textoDistancia(km) {
+    const kmTexto = km < 1 ? `${Math.round(km * 1000)} m` : `${km.toFixed(1).replace('.', ',')} km`;
+    if (km <= 3) {
+        const minutos = Math.max(1, Math.round(km * 1.3 / 5 * 60)); // 5 km/h y un 30 % más por las calles
+        return `Estás a unos <strong>${kmTexto}</strong> en línea recta: unos <strong>${minutos} minutos andando</strong>.`;
+    }
+    if (km <= 40) return `Estás a unos <strong>${kmTexto}</strong>: mejor en bus o en coche (aparca fuera del casco histórico).`;
+    return `Estás a unos <strong>${kmTexto}</strong> de Santiago. ¡Te esperamos cuando vengas!`;
+}
+
+if (botonUbicacion) {
+    if (!('geolocation' in navigator)) {
+        botonUbicacion.hidden = true;
+        resultadoUbicacion.textContent = 'Tu navegador no permite calcular la distancia. Usa el botón de la ruta.';
+    }
+    botonUbicacion.addEventListener('click', () => {
+        resultadoUbicacion.textContent = 'Buscando tu ubicación…';
+        navigator.geolocation.getCurrentPosition(
+            pos => {
+                const km = distanciaKm({ lat: pos.coords.latitude, lon: pos.coords.longitude }, NAMI_POSICION);
+                resultadoUbicacion.innerHTML = textoDistancia(km);
+            },
+            () => {
+                resultadoUbicacion.textContent = 'No hemos podido saber dónde estás (permiso denegado o sin señal). Prueba con «Cómo llegar desde donde estás».';
+            },
+            { timeout: 10000, maximumAge: 300000 }
+        );
+    });
+}

@@ -1,7 +1,0 @@
-Nami Ramen · Restaurante estático (DIW · UD2 · Actividad 5)
-Autor: Miguel Tubío Vidal · DAW · IES San Clemente
-
-Abrir index.html en el navegador (Chrome o Firefox). No necesita servidor.
-- diseño.pdf: análisis, modelo de diseño, boceto, identidad, implementación, pruebas y créditos.
-- Boceto en Figma: https://www.figma.com/design/bgRNjeCyFvOeC23oTah7rP
-- El mapa de Contacto necesita conexión a internet (iframe de Google Maps).

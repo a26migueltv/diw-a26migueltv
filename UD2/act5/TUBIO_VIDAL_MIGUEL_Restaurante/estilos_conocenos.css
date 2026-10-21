@@ -42,25 +42,23 @@
     align-items: center;
     padding: 34px 0;
 }
-/* Punto sobre la línea */
+/* Naruto (espiral del ramen) como punto sobre la línea */
 .hito::before {
     content: "";
     position: absolute;
     left: 50%;
     top: 50%;
-    width: 20px;
-    height: 20px;
-    border: 4px solid var(--tinta);
+    width: 34px;
+    height: 34px;
     border-radius: 50%;
-    background: var(--oro);
-    box-shadow: 0 0 0 2px var(--oro);
+    background: url(img/iconos/naruto.svg) center / contain no-repeat;
+    box-shadow: 0 0 0 5px var(--tinta);
     transform: translate(-50%, -50%);
     z-index: 1;
-    transition: background-color .3s, transform .3s;
+    transition: transform .5s;
 }
 .hito:hover::before {
-    background: var(--rojo);
-    transform: translate(-50%, -50%) scale(1.25);
+    transform: translate(-50%, -50%) rotate(180deg) scale(1.2);
 }
 /* Alternar lados */
 .hito:nth-child(even) .hito-imagen { order: 2; }

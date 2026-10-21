@@ -70,7 +70,7 @@
             <p class="kanji-vertical" aria-hidden="true" lang="ja">お品書き</p>
         </section>
 
-        <!-- Guía de la carta: filtros y leyenda -->
+        <!-- Guía de la carta: filtros -->
         <section id="guia-carta" aria-label="Filtrar la carta">
             <div id="guia-carta-contenido" class="contenedor">
                 <div id="filtros" role="group" aria-label="Mostrar">
@@ -82,20 +82,19 @@
                     <button type="button" class="filtro" data-filtro="sin-picante" aria-pressed="false" data-tooltip="Oculta los platos picantes">Sin picante</button>
                 </div>
                 <p id="resultado-filtro" aria-live="polite">Mostrando los 11 platos de la carta.</p>
-                <details id="leyenda-alergenos">
-                    <summary>Leyenda de alérgenos y picante</summary>
-                    <ul id="lista-leyenda"><li><span class="alergeno" aria-hidden="true">G</span> gluten</li><li><span class="alergeno" aria-hidden="true">H</span> huevo</li><li><span class="alergeno" aria-hidden="true">S</span> soja</li><li><span class="alergeno" aria-hidden="true">Sé</span> sésamo</li><li><span class="alergeno" aria-hidden="true">L</span> lácteos</li><li><span class="alergeno" aria-hidden="true">P</span> pescado</li><li><span class="alergeno" aria-hidden="true">Mo</span> moluscos</li><li><span class="picante picante--leyenda" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.6 7.2c2.9-.4 4.9 1.6 4.6 4.6-.5 5.3-6.3 10-14.2 10.2 4.6-2.4 7.4-6.6 7.6-11.5.1-1.8.8-3.1 2-3.3z"/><path d="M13.4 7.6c-.3-2.4.7-4.4 3-5.6l.8 1.4c-1.6.9-2.3 2.2-2 4z"/></svg></span> nivel de picante (1 a 3)</li></ul>
-                    <p id="nota-leyenda">Pasa el ratón (o toca) sobre cada icono de un plato para ver qué significa.</p>
-                </details>
+                <a id="enlace-leyenda" href="#leyenda-alergenos">Ver la leyenda de alérgenos</a>
             </div>
         </section>
 
         <!-- Aperitivos -->
         <section id="seccion-aperitivos" class="seccion seccion-carta" data-categoria="aperitivos" aria-labelledby="titulo-aperitivos">
             <div id="aperitivos-contenido" class="contenedor">
-                <div id="aperitivos-cabecera" class="cabecera-seccion revelar">
-                    <p class="antetitulo"><span lang="ja">前菜</span> Para empezar</p>
-                    <h2 id="titulo-aperitivos">Aperitivos</h2>
+                <div id="aperitivos-cabecera" class="cabecera-seccion cabecera-seccion--icono revelar">
+                    <img class="icono-seccion" src="img/iconos/sushi.svg" alt="" width="64" height="64">
+                    <div>
+                        <p class="antetitulo"><span lang="ja">前菜</span> Para empezar</p>
+                        <h2 id="titulo-aperitivos">Aperitivos</h2>
+                    </div>
                 </div>
                 <div id="lista-aperitivos" class="rejilla-platos">
                     <article id="plato-gyozas" class="plato revelar" data-categoria="aperitivos" data-etiquetas="sin-picante">
@@ -110,7 +109,7 @@
                             </header>
                             <p class="plato-descripcion">Seis empanadillas de cerdo celta, col y jengibre, doradas a la plancha. Con salsa ponzu.</p>
                             <footer id="pie-gyozas" class="plato-pie">
-                                <ul id="alergenos-gyozas" class="alergenos" aria-label="Alérgenos"><li class="alergeno" tabindex="0" data-tooltip="Contiene gluten (trigo)"><span aria-hidden="true">G</span><span class="solo-lectores">Contiene gluten (trigo)</span></li><li class="alergeno" tabindex="0" data-tooltip="Contiene soja"><span aria-hidden="true">S</span><span class="solo-lectores">Contiene soja</span></li><li class="alergeno" tabindex="0" data-tooltip="Contiene sésamo"><span aria-hidden="true">Sé</span><span class="solo-lectores">Contiene sésamo</span></li></ul>
+                                <ul id="alergenos-gyozas" class="alergenos" aria-label="Alérgenos"><li class="alergeno" tabindex="0" data-tooltip="Contiene: cereales con gluten"><img src="img/carta/alergenos/gluten.png" alt="Cereales con gluten" width="32" height="32" loading="lazy"></li><li class="alergeno" tabindex="0" data-tooltip="Contiene: soja"><img src="img/carta/alergenos/soja.png" alt="Soja" width="32" height="32" loading="lazy"></li><li class="alergeno" tabindex="0" data-tooltip="Contiene: sésamo"><img src="img/carta/alergenos/sesamo.png" alt="Sésamo" width="32" height="32" loading="lazy"></li></ul>
                                 
                             </footer>
                         </div>
@@ -125,10 +124,10 @@
                                 <h3>Edamame <span lang="ja">枝豆</span></h3>
                                 <p class="precio">4,50 €</p>
                             </header>
-                            <p class="plato-descripcion">Vainas de soja verde al vapor con sal en escamas y un toque de shichimi opcional.</p>
+                            <p class="plato-descripcion">Vainas de soja verde al vapor con sal en escamas y un toque de lima.</p>
                             <footer id="pie-edamame" class="plato-pie">
-                                <ul id="alergenos-edamame" class="alergenos" aria-label="Alérgenos"><li class="alergeno" tabindex="0" data-tooltip="Contiene soja"><span aria-hidden="true">S</span><span class="solo-lectores">Contiene soja</span></li></ul>
-                                <span class="insignia insignia--vegano" data-tooltip="Sin ingredientes de origen animal">Vegano</span>
+                                <ul id="alergenos-edamame" class="alergenos" aria-label="Alérgenos"><li class="alergeno" tabindex="0" data-tooltip="Contiene: soja"><img src="img/carta/alergenos/soja.png" alt="Soja" width="32" height="32" loading="lazy"></li></ul>
+                                <span class="etiqueta etiqueta--vegano" tabindex="0" data-tooltip="Sin ingredientes de origen animal"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 3C10 3 4 8 4 15c0 2 .5 3.6 1.3 5L4 21.3 5.4 22.7l1.4-1.4C8 22 9.5 22.4 11 22.4 18 22.4 21 15 20 3zM8.3 17.7c2-4 5-6.8 8.7-8.7-3 2.6-5.6 5.5-7.4 9.4z"/></svg>Vegano</span>
                             </footer>
                         </div>
                     </article>
@@ -144,7 +143,7 @@
                             </header>
                             <p class="plato-descripcion">Seis buñuelos de pulpo de la ría con salsa takoyaki, mayonesa japonesa y katsuobushi.</p>
                             <footer id="pie-takoyaki" class="plato-pie">
-                                <ul id="alergenos-takoyaki" class="alergenos" aria-label="Alérgenos"><li class="alergeno" tabindex="0" data-tooltip="Contiene gluten (trigo)"><span aria-hidden="true">G</span><span class="solo-lectores">Contiene gluten (trigo)</span></li><li class="alergeno" tabindex="0" data-tooltip="Contiene huevo"><span aria-hidden="true">H</span><span class="solo-lectores">Contiene huevo</span></li><li class="alergeno" tabindex="0" data-tooltip="Contiene soja"><span aria-hidden="true">S</span><span class="solo-lectores">Contiene soja</span></li><li class="alergeno" tabindex="0" data-tooltip="Contiene pescado"><span aria-hidden="true">P</span><span class="solo-lectores">Contiene pescado</span></li><li class="alergeno" tabindex="0" data-tooltip="Contiene moluscos"><span aria-hidden="true">Mo</span><span class="solo-lectores">Contiene moluscos</span></li></ul>
+                                <ul id="alergenos-takoyaki" class="alergenos" aria-label="Alérgenos"><li class="alergeno" tabindex="0" data-tooltip="Contiene: cereales con gluten"><img src="img/carta/alergenos/gluten.png" alt="Cereales con gluten" width="32" height="32" loading="lazy"></li><li class="alergeno" tabindex="0" data-tooltip="Contiene: huevos"><img src="img/carta/alergenos/huevo.png" alt="Huevos" width="32" height="32" loading="lazy"></li><li class="alergeno" tabindex="0" data-tooltip="Contiene: soja"><img src="img/carta/alergenos/soja.png" alt="Soja" width="32" height="32" loading="lazy"></li><li class="alergeno" tabindex="0" data-tooltip="Contiene: pescado"><img src="img/carta/alergenos/pescado.png" alt="Pescado" width="32" height="32" loading="lazy"></li><li class="alergeno" tabindex="0" data-tooltip="Contiene: moluscos"><img src="img/carta/alergenos/moluscos.png" alt="Moluscos" width="32" height="32" loading="lazy"></li></ul>
                                 
                             </footer>
                         </div>
@@ -156,16 +155,19 @@
         <!-- Ramen: el producto base -->
         <section id="seccion-ramen" class="seccion seccion--oscura seccion-carta" data-categoria="ramen" aria-labelledby="titulo-ramen">
             <div id="ramen-contenido" class="contenedor">
-                <div id="ramen-cabecera" class="cabecera-seccion revelar">
-                    <p class="antetitulo"><span lang="ja">ラーメン</span> El plato principal</p>
-                    <h2 id="titulo-ramen">Ramen</h2>
-                    <p>Todos llevan fideo de trigo hecho cada mañana. Si necesitas una opción sin gluten, pídenos fideo de arroz al reservar (lo cocemos aparte, pero la cocina es pequeña y no podemos garantizar la ausencia de trazas).</p>
+                <div id="ramen-cabecera" class="cabecera-seccion cabecera-seccion--icono revelar">
+                    <img class="icono-seccion" src="img/iconos/cuenco.svg" alt="" width="64" height="64">
+                    <div>
+                        <p class="antetitulo"><span lang="ja">ラーメン</span> El plato principal</p>
+                        <h2 id="titulo-ramen">Ramen</h2>
+                        <p>Todos llevan fideo de trigo hecho cada mañana. Si necesitas una opción sin gluten, pídenos fideo de arroz al reservar (lo cocemos aparte, pero la cocina es pequeña y no podemos garantizar la ausencia de trazas).</p>
+                    </div>
                 </div>
                 <div id="lista-ramen" class="rejilla-platos rejilla-platos--ramen">
                     <article id="plato-tonkotsu" class="plato plato--grande revelar" data-categoria="ramen" data-etiquetas="sin-picante">
                         <figure id="foto-tonkotsu" class="plato-foto">
                             <img src="img/carta/tonkotsu.jpg" alt="Ramen tonkotsu de caldo blanco con chashu, huevo, setas y cebolleta" width="1024" height="686" loading="lazy">
-                            <span class="insignia insignia--chef">Recomendado del chef</span>
+                            <span class="etiqueta etiqueta--chef"><img src="img/iconos/cuenco.svg" alt="" width="18" height="18">Recomendado del chef</span>
                         </figure>
                         <div id="info-tonkotsu" class="plato-info">
                             <header id="cabecera-tonkotsu" class="plato-cabecera">
@@ -174,7 +176,7 @@
                             </header>
                             <p class="plato-descripcion">Caldo blanco de hueso de cerdo cocido 18 horas, chashu glaseado, huevo ajitama, setas kikurage, cebolleta y nori.</p>
                             <footer id="pie-tonkotsu" class="plato-pie">
-                                <ul id="alergenos-tonkotsu" class="alergenos" aria-label="Alérgenos"><li class="alergeno" tabindex="0" data-tooltip="Contiene gluten (trigo)"><span aria-hidden="true">G</span><span class="solo-lectores">Contiene gluten (trigo)</span></li><li class="alergeno" tabindex="0" data-tooltip="Contiene huevo"><span aria-hidden="true">H</span><span class="solo-lectores">Contiene huevo</span></li><li class="alergeno" tabindex="0" data-tooltip="Contiene soja"><span aria-hidden="true">S</span><span class="solo-lectores">Contiene soja</span></li><li class="alergeno" tabindex="0" data-tooltip="Contiene sésamo"><span aria-hidden="true">Sé</span><span class="solo-lectores">Contiene sésamo</span></li></ul>
+                                <ul id="alergenos-tonkotsu" class="alergenos" aria-label="Alérgenos"><li class="alergeno" tabindex="0" data-tooltip="Contiene: cereales con gluten"><img src="img/carta/alergenos/gluten.png" alt="Cereales con gluten" width="32" height="32" loading="lazy"></li><li class="alergeno" tabindex="0" data-tooltip="Contiene: huevos"><img src="img/carta/alergenos/huevo.png" alt="Huevos" width="32" height="32" loading="lazy"></li><li class="alergeno" tabindex="0" data-tooltip="Contiene: soja"><img src="img/carta/alergenos/soja.png" alt="Soja" width="32" height="32" loading="lazy"></li><li class="alergeno" tabindex="0" data-tooltip="Contiene: sésamo"><img src="img/carta/alergenos/sesamo.png" alt="Sésamo" width="32" height="32" loading="lazy"></li></ul>
                                 
                             </footer>
                         </div>
@@ -191,7 +193,7 @@
                             </header>
                             <p class="plato-descripcion">Caldo claro de pollo y dashi con tare de soja, chashu, brotes de bambú (menma), naruto y huevo ajitama.</p>
                             <footer id="pie-shoyu" class="plato-pie">
-                                <ul id="alergenos-shoyu" class="alergenos" aria-label="Alérgenos"><li class="alergeno" tabindex="0" data-tooltip="Contiene gluten (trigo)"><span aria-hidden="true">G</span><span class="solo-lectores">Contiene gluten (trigo)</span></li><li class="alergeno" tabindex="0" data-tooltip="Contiene huevo"><span aria-hidden="true">H</span><span class="solo-lectores">Contiene huevo</span></li><li class="alergeno" tabindex="0" data-tooltip="Contiene soja"><span aria-hidden="true">S</span><span class="solo-lectores">Contiene soja</span></li><li class="alergeno" tabindex="0" data-tooltip="Contiene pescado"><span aria-hidden="true">P</span><span class="solo-lectores">Contiene pescado</span></li></ul>
+                                <ul id="alergenos-shoyu" class="alergenos" aria-label="Alérgenos"><li class="alergeno" tabindex="0" data-tooltip="Contiene: cereales con gluten"><img src="img/carta/alergenos/gluten.png" alt="Cereales con gluten" width="32" height="32" loading="lazy"></li><li class="alergeno" tabindex="0" data-tooltip="Contiene: huevos"><img src="img/carta/alergenos/huevo.png" alt="Huevos" width="32" height="32" loading="lazy"></li><li class="alergeno" tabindex="0" data-tooltip="Contiene: soja"><img src="img/carta/alergenos/soja.png" alt="Soja" width="32" height="32" loading="lazy"></li><li class="alergeno" tabindex="0" data-tooltip="Contiene: pescado"><img src="img/carta/alergenos/pescado.png" alt="Pescado" width="32" height="32" loading="lazy"></li></ul>
                                 
                             </footer>
                         </div>
@@ -199,7 +201,7 @@
                     <article id="plato-miso" class="plato plato--grande revelar" data-categoria="ramen" data-etiquetas="" data-retraso="2">
                         <figure id="foto-miso" class="plato-foto">
                             <img src="img/carta/miso.jpg" alt="Ramen de miso con chashu, huevo, naruto y cebolleta" width="1024" height="768" loading="lazy">
-                            
+                            <p class="etiqueta etiqueta--picante" tabindex="0" data-tooltip="Picante suave (1 de 3)"><span class="solo-lectores">Picante suave, nivel 1 de 3</span><span class="guindilla encendida"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.6 7.2c2.9-.4 4.9 1.6 4.6 4.6-.5 5.3-6.3 10-14.2 10.2 4.6-2.4 7.4-6.6 7.6-11.5.1-1.8.8-3.1 2-3.3z"/><path class="rabito" d="M13.4 7.6c-.3-2.4.7-4.4 3-5.6l.8 1.4c-1.6.9-2.3 2.2-2 4z"/></svg></span><span class="guindilla"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.6 7.2c2.9-.4 4.9 1.6 4.6 4.6-.5 5.3-6.3 10-14.2 10.2 4.6-2.4 7.4-6.6 7.6-11.5.1-1.8.8-3.1 2-3.3z"/><path class="rabito" d="M13.4 7.6c-.3-2.4.7-4.4 3-5.6l.8 1.4c-1.6.9-2.3 2.2-2 4z"/></svg></span><span class="guindilla"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.6 7.2c2.9-.4 4.9 1.6 4.6 4.6-.5 5.3-6.3 10-14.2 10.2 4.6-2.4 7.4-6.6 7.6-11.5.1-1.8.8-3.1 2-3.3z"/><path class="rabito" d="M13.4 7.6c-.3-2.4.7-4.4 3-5.6l.8 1.4c-1.6.9-2.3 2.2-2 4z"/></svg></span></p>
                         </figure>
                         <div id="info-miso" class="plato-info">
                             <header id="cabecera-miso" class="plato-cabecera">
@@ -208,8 +210,8 @@
                             </header>
                             <p class="plato-descripcion">Caldo de miso rojo al estilo de Sapporo, el de la familia: maíz, brotes de soja salteados, chashu y una nuez de mantequilla.</p>
                             <footer id="pie-miso" class="plato-pie">
-                                <ul id="alergenos-miso" class="alergenos" aria-label="Alérgenos"><li class="alergeno" tabindex="0" data-tooltip="Contiene gluten (trigo)"><span aria-hidden="true">G</span><span class="solo-lectores">Contiene gluten (trigo)</span></li><li class="alergeno" tabindex="0" data-tooltip="Contiene soja"><span aria-hidden="true">S</span><span class="solo-lectores">Contiene soja</span></li><li class="alergeno" tabindex="0" data-tooltip="Contiene sésamo"><span aria-hidden="true">Sé</span><span class="solo-lectores">Contiene sésamo</span></li><li class="alergeno" tabindex="0" data-tooltip="Contiene lácteos"><span aria-hidden="true">L</span><span class="solo-lectores">Contiene lácteos</span></li></ul>
-                                <p class="picante" tabindex="0" data-tooltip="Picante suave (1 de 3)"><span class="solo-lectores">Picante suave</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.6 7.2c2.9-.4 4.9 1.6 4.6 4.6-.5 5.3-6.3 10-14.2 10.2 4.6-2.4 7.4-6.6 7.6-11.5.1-1.8.8-3.1 2-3.3z"/><path d="M13.4 7.6c-.3-2.4.7-4.4 3-5.6l.8 1.4c-1.6.9-2.3 2.2-2 4z"/></svg></p>
+                                <ul id="alergenos-miso" class="alergenos" aria-label="Alérgenos"><li class="alergeno" tabindex="0" data-tooltip="Contiene: cereales con gluten"><img src="img/carta/alergenos/gluten.png" alt="Cereales con gluten" width="32" height="32" loading="lazy"></li><li class="alergeno" tabindex="0" data-tooltip="Contiene: soja"><img src="img/carta/alergenos/soja.png" alt="Soja" width="32" height="32" loading="lazy"></li><li class="alergeno" tabindex="0" data-tooltip="Contiene: sésamo"><img src="img/carta/alergenos/sesamo.png" alt="Sésamo" width="32" height="32" loading="lazy"></li><li class="alergeno" tabindex="0" data-tooltip="Contiene: lácteos"><img src="img/carta/alergenos/lacteos.png" alt="Lácteos" width="32" height="32" loading="lazy"></li></ul>
+                                
                             </footer>
                         </div>
                     </article>
@@ -225,7 +227,7 @@
                             </header>
                             <p class="plato-descripcion">El más ligero: caldo de pollo y kombu con sal marina y cáscara de yuzu, pollo a baja temperatura, huevo y mizuna.</p>
                             <footer id="pie-shio" class="plato-pie">
-                                <ul id="alergenos-shio" class="alergenos" aria-label="Alérgenos"><li class="alergeno" tabindex="0" data-tooltip="Contiene gluten (trigo)"><span aria-hidden="true">G</span><span class="solo-lectores">Contiene gluten (trigo)</span></li><li class="alergeno" tabindex="0" data-tooltip="Contiene huevo"><span aria-hidden="true">H</span><span class="solo-lectores">Contiene huevo</span></li></ul>
+                                <ul id="alergenos-shio" class="alergenos" aria-label="Alérgenos"><li class="alergeno" tabindex="0" data-tooltip="Contiene: cereales con gluten"><img src="img/carta/alergenos/gluten.png" alt="Cereales con gluten" width="32" height="32" loading="lazy"></li><li class="alergeno" tabindex="0" data-tooltip="Contiene: huevos"><img src="img/carta/alergenos/huevo.png" alt="Huevos" width="32" height="32" loading="lazy"></li></ul>
                                 
                             </footer>
                         </div>
@@ -233,7 +235,7 @@
                     <article id="plato-tantanmen" class="plato plato--grande revelar" data-categoria="ramen" data-etiquetas="picante" data-retraso="1">
                         <figure id="foto-tantanmen" class="plato-foto">
                             <img src="img/carta/tantanmen.jpg" alt="Tantanmen de caldo rojizo con carne picada especiada y chile" width="1024" height="683" loading="lazy">
-                            
+                            <p class="etiqueta etiqueta--picante" tabindex="0" data-tooltip="Muy picante (3 de 3)"><span class="solo-lectores">Muy picante, nivel 3 de 3</span><span class="guindilla encendida"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.6 7.2c2.9-.4 4.9 1.6 4.6 4.6-.5 5.3-6.3 10-14.2 10.2 4.6-2.4 7.4-6.6 7.6-11.5.1-1.8.8-3.1 2-3.3z"/><path class="rabito" d="M13.4 7.6c-.3-2.4.7-4.4 3-5.6l.8 1.4c-1.6.9-2.3 2.2-2 4z"/></svg></span><span class="guindilla encendida"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.6 7.2c2.9-.4 4.9 1.6 4.6 4.6-.5 5.3-6.3 10-14.2 10.2 4.6-2.4 7.4-6.6 7.6-11.5.1-1.8.8-3.1 2-3.3z"/><path class="rabito" d="M13.4 7.6c-.3-2.4.7-4.4 3-5.6l.8 1.4c-1.6.9-2.3 2.2-2 4z"/></svg></span><span class="guindilla encendida"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.6 7.2c2.9-.4 4.9 1.6 4.6 4.6-.5 5.3-6.3 10-14.2 10.2 4.6-2.4 7.4-6.6 7.6-11.5.1-1.8.8-3.1 2-3.3z"/><path class="rabito" d="M13.4 7.6c-.3-2.4.7-4.4 3-5.6l.8 1.4c-1.6.9-2.3 2.2-2 4z"/></svg></span></p>
                         </figure>
                         <div id="info-tantanmen" class="plato-info">
                             <header id="cabecera-tantanmen" class="plato-cabecera">
@@ -242,15 +244,15 @@
                             </header>
                             <p class="plato-descripcion">Caldo cremoso de pasta de sésamo y chile, carne de cerdo picada con miso picante, bok choy y cacahuete tostado.</p>
                             <footer id="pie-tantanmen" class="plato-pie">
-                                <ul id="alergenos-tantanmen" class="alergenos" aria-label="Alérgenos"><li class="alergeno" tabindex="0" data-tooltip="Contiene gluten (trigo)"><span aria-hidden="true">G</span><span class="solo-lectores">Contiene gluten (trigo)</span></li><li class="alergeno" tabindex="0" data-tooltip="Contiene soja"><span aria-hidden="true">S</span><span class="solo-lectores">Contiene soja</span></li><li class="alergeno" tabindex="0" data-tooltip="Contiene sésamo"><span aria-hidden="true">Sé</span><span class="solo-lectores">Contiene sésamo</span></li></ul>
-                                <p class="picante" tabindex="0" data-tooltip="Muy picante (3 de 3)"><span class="solo-lectores">Muy picante</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.6 7.2c2.9-.4 4.9 1.6 4.6 4.6-.5 5.3-6.3 10-14.2 10.2 4.6-2.4 7.4-6.6 7.6-11.5.1-1.8.8-3.1 2-3.3z"/><path d="M13.4 7.6c-.3-2.4.7-4.4 3-5.6l.8 1.4c-1.6.9-2.3 2.2-2 4z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.6 7.2c2.9-.4 4.9 1.6 4.6 4.6-.5 5.3-6.3 10-14.2 10.2 4.6-2.4 7.4-6.6 7.6-11.5.1-1.8.8-3.1 2-3.3z"/><path d="M13.4 7.6c-.3-2.4.7-4.4 3-5.6l.8 1.4c-1.6.9-2.3 2.2-2 4z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.6 7.2c2.9-.4 4.9 1.6 4.6 4.6-.5 5.3-6.3 10-14.2 10.2 4.6-2.4 7.4-6.6 7.6-11.5.1-1.8.8-3.1 2-3.3z"/><path d="M13.4 7.6c-.3-2.4.7-4.4 3-5.6l.8 1.4c-1.6.9-2.3 2.2-2 4z"/></svg></p>
+                                <ul id="alergenos-tantanmen" class="alergenos" aria-label="Alérgenos"><li class="alergeno" tabindex="0" data-tooltip="Contiene: cereales con gluten"><img src="img/carta/alergenos/gluten.png" alt="Cereales con gluten" width="32" height="32" loading="lazy"></li><li class="alergeno" tabindex="0" data-tooltip="Contiene: soja"><img src="img/carta/alergenos/soja.png" alt="Soja" width="32" height="32" loading="lazy"></li><li class="alergeno" tabindex="0" data-tooltip="Contiene: sésamo"><img src="img/carta/alergenos/sesamo.png" alt="Sésamo" width="32" height="32" loading="lazy"></li><li class="alergeno" tabindex="0" data-tooltip="Contiene: cacahuetes"><img src="img/carta/alergenos/cacahuetes.png" alt="Cacahuetes" width="32" height="32" loading="lazy"></li></ul>
+                                
                             </footer>
                         </div>
                     </article>
                     <article id="plato-yasai" class="plato plato--grande revelar" data-categoria="ramen" data-etiquetas="vegano" data-retraso="2">
                         <figure id="foto-yasai" class="plato-foto">
                             <img src="img/carta/vegano.jpg" alt="Ramen vegano con verduras, aguacate, champiñones y brotes" width="1024" height="768" loading="lazy">
-                            
+                            <p class="etiqueta etiqueta--picante" tabindex="0" data-tooltip="Picante suave (1 de 3)"><span class="solo-lectores">Picante suave, nivel 1 de 3</span><span class="guindilla encendida"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.6 7.2c2.9-.4 4.9 1.6 4.6 4.6-.5 5.3-6.3 10-14.2 10.2 4.6-2.4 7.4-6.6 7.6-11.5.1-1.8.8-3.1 2-3.3z"/><path class="rabito" d="M13.4 7.6c-.3-2.4.7-4.4 3-5.6l.8 1.4c-1.6.9-2.3 2.2-2 4z"/></svg></span><span class="guindilla"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.6 7.2c2.9-.4 4.9 1.6 4.6 4.6-.5 5.3-6.3 10-14.2 10.2 4.6-2.4 7.4-6.6 7.6-11.5.1-1.8.8-3.1 2-3.3z"/><path class="rabito" d="M13.4 7.6c-.3-2.4.7-4.4 3-5.6l.8 1.4c-1.6.9-2.3 2.2-2 4z"/></svg></span><span class="guindilla"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.6 7.2c2.9-.4 4.9 1.6 4.6 4.6-.5 5.3-6.3 10-14.2 10.2 4.6-2.4 7.4-6.6 7.6-11.5.1-1.8.8-3.1 2-3.3z"/><path class="rabito" d="M13.4 7.6c-.3-2.4.7-4.4 3-5.6l.8 1.4c-1.6.9-2.3 2.2-2 4z"/></svg></span></p>
                         </figure>
                         <div id="info-yasai" class="plato-info">
                             <header id="cabecera-yasai" class="plato-cabecera">
@@ -259,8 +261,8 @@
                             </header>
                             <p class="plato-descripcion">Caldo de verduras asadas, shiitake y kombu, tofu marinado y verduras de temporada de la Plaza de Abastos.</p>
                             <footer id="pie-yasai" class="plato-pie">
-                                <ul id="alergenos-yasai" class="alergenos" aria-label="Alérgenos"><li class="alergeno" tabindex="0" data-tooltip="Contiene gluten (trigo)"><span aria-hidden="true">G</span><span class="solo-lectores">Contiene gluten (trigo)</span></li><li class="alergeno" tabindex="0" data-tooltip="Contiene soja"><span aria-hidden="true">S</span><span class="solo-lectores">Contiene soja</span></li><li class="alergeno" tabindex="0" data-tooltip="Contiene sésamo"><span aria-hidden="true">Sé</span><span class="solo-lectores">Contiene sésamo</span></li></ul>
-                                <p class="picante" tabindex="0" data-tooltip="Picante suave (1 de 3)"><span class="solo-lectores">Picante suave</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.6 7.2c2.9-.4 4.9 1.6 4.6 4.6-.5 5.3-6.3 10-14.2 10.2 4.6-2.4 7.4-6.6 7.6-11.5.1-1.8.8-3.1 2-3.3z"/><path d="M13.4 7.6c-.3-2.4.7-4.4 3-5.6l.8 1.4c-1.6.9-2.3 2.2-2 4z"/></svg></p><span class="insignia insignia--vegano" data-tooltip="Sin ingredientes de origen animal">Vegano</span>
+                                <ul id="alergenos-yasai" class="alergenos" aria-label="Alérgenos"><li class="alergeno" tabindex="0" data-tooltip="Contiene: cereales con gluten"><img src="img/carta/alergenos/gluten.png" alt="Cereales con gluten" width="32" height="32" loading="lazy"></li><li class="alergeno" tabindex="0" data-tooltip="Contiene: soja"><img src="img/carta/alergenos/soja.png" alt="Soja" width="32" height="32" loading="lazy"></li><li class="alergeno" tabindex="0" data-tooltip="Contiene: sésamo"><img src="img/carta/alergenos/sesamo.png" alt="Sésamo" width="32" height="32" loading="lazy"></li></ul>
+                                <span class="etiqueta etiqueta--vegano" tabindex="0" data-tooltip="Sin ingredientes de origen animal"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 3C10 3 4 8 4 15c0 2 .5 3.6 1.3 5L4 21.3 5.4 22.7l1.4-1.4C8 22 9.5 22.4 11 22.4 18 22.4 21 15 20 3zM8.3 17.7c2-4 5-6.8 8.7-8.7-3 2.6-5.6 5.5-7.4 9.4z"/></svg>Vegano</span>
                             </footer>
                         </div>
                     </article>
@@ -291,7 +293,7 @@
                     <p class="antetitulo"><span lang="ja">いただきます</span> Cómo se come</p>
                     <h2 id="titulo-video">Sin miedo a sorber</h2>
                     <p>En Japón el ramen se come rápido y caliente. Remueve el fideo con los palillos para que coja el caldo, sórbelo sin miedo (enfría y potencia el sabor) y usa la cuchara para el final.</p>
-                    <ul id="consejos-video">
+                    <ul id="consejos-video" class="lista-tematica lista-tematica--palillos">
                         <li>Primero, prueba el caldo solo.</li>
                         <li>Después, el fideo: no esperes o se pasará.</li>
                         <li>Deja el huevo para el final.</li>
@@ -311,9 +313,12 @@
         <!-- Postres -->
         <section id="seccion-postres" class="seccion seccion--clara seccion-carta" data-categoria="postres" aria-labelledby="titulo-postres">
             <div id="postres-contenido" class="contenedor">
-                <div id="postres-cabecera" class="cabecera-seccion revelar">
-                    <p class="antetitulo"><span lang="ja">甘味</span> Para terminar</p>
-                    <h2 id="titulo-postres">Postres</h2>
+                <div id="postres-cabecera" class="cabecera-seccion cabecera-seccion--icono revelar">
+                    <img class="icono-seccion" src="img/iconos/dango.svg" alt="" width="64" height="64">
+                    <div>
+                        <p class="antetitulo"><span lang="ja">甘味</span> Para terminar</p>
+                        <h2 id="titulo-postres">Postres</h2>
+                    </div>
                 </div>
                 <div id="lista-postres" class="rejilla-platos rejilla-platos--postres">
                     <article id="plato-mochi" class="plato revelar" data-categoria="postres" data-etiquetas="sin-picante">
@@ -328,7 +333,7 @@
                             </header>
                             <p class="plato-descripcion">Tres bocados de pasta de arroz rellenos de helado: matcha, sésamo negro y fresa.</p>
                             <footer id="pie-mochi" class="plato-pie">
-                                <ul id="alergenos-mochi" class="alergenos" aria-label="Alérgenos"><li class="alergeno" tabindex="0" data-tooltip="Contiene lácteos"><span aria-hidden="true">L</span><span class="solo-lectores">Contiene lácteos</span></li><li class="alergeno" tabindex="0" data-tooltip="Contiene sésamo"><span aria-hidden="true">Sé</span><span class="solo-lectores">Contiene sésamo</span></li></ul>
+                                <ul id="alergenos-mochi" class="alergenos" aria-label="Alérgenos"><li class="alergeno" tabindex="0" data-tooltip="Contiene: lácteos"><img src="img/carta/alergenos/lacteos.png" alt="Lácteos" width="32" height="32" loading="lazy"></li><li class="alergeno" tabindex="0" data-tooltip="Contiene: sésamo"><img src="img/carta/alergenos/sesamo.png" alt="Sésamo" width="32" height="32" loading="lazy"></li></ul>
                                 
                             </footer>
                         </div>
@@ -345,7 +350,7 @@
                             </header>
                             <p class="plato-descripcion">Dos tortitas esponjosas de miel rellenas de anko, crema dulce de judía roja. Recién hechas.</p>
                             <footer id="pie-dorayaki" class="plato-pie">
-                                <ul id="alergenos-dorayaki" class="alergenos" aria-label="Alérgenos"><li class="alergeno" tabindex="0" data-tooltip="Contiene gluten (trigo)"><span aria-hidden="true">G</span><span class="solo-lectores">Contiene gluten (trigo)</span></li><li class="alergeno" tabindex="0" data-tooltip="Contiene huevo"><span aria-hidden="true">H</span><span class="solo-lectores">Contiene huevo</span></li><li class="alergeno" tabindex="0" data-tooltip="Contiene lácteos"><span aria-hidden="true">L</span><span class="solo-lectores">Contiene lácteos</span></li></ul>
+                                <ul id="alergenos-dorayaki" class="alergenos" aria-label="Alérgenos"><li class="alergeno" tabindex="0" data-tooltip="Contiene: cereales con gluten"><img src="img/carta/alergenos/gluten.png" alt="Cereales con gluten" width="32" height="32" loading="lazy"></li><li class="alergeno" tabindex="0" data-tooltip="Contiene: huevos"><img src="img/carta/alergenos/huevo.png" alt="Huevos" width="32" height="32" loading="lazy"></li><li class="alergeno" tabindex="0" data-tooltip="Contiene: lácteos"><img src="img/carta/alergenos/lacteos.png" alt="Lácteos" width="32" height="32" loading="lazy"></li></ul>
                                 
                             </footer>
                         </div>
@@ -357,8 +362,43 @@
         <!-- Mensaje cuando un filtro no deja ningún plato -->
         <p id="sin-resultados" hidden>No hay platos con ese filtro. <button type="button" id="quitar-filtro" class="boton boton--rojo">Ver toda la carta</button></p>
 
+        <!-- Leyenda de alérgenos y etiquetas (al final de la carta) -->
+        <section id="leyenda-alergenos" class="seccion" aria-labelledby="titulo-leyenda">
+            <div id="leyenda-contenido" class="contenedor">
+                <div id="leyenda-cabecera" class="cabecera-seccion revelar">
+                    <p class="antetitulo"><span lang="ja">表示</span> Leyenda</p>
+                    <h2 id="titulo-leyenda">Alérgenos y etiquetas</h2>
+                    <p>Usamos los iconos habituales de los 14 alérgenos que el Reglamento (UE) 1169/2011 obliga a declarar. Pasa el ratón o toca cada icono de un plato para ver su nombre.</p>
+                </div>
+                <ul id="lista-leyenda" class="revelar">
+                    <li id="leyenda-gluten" class="leyenda-item"><img src="img/carta/alergenos/gluten.png" alt="" width="56" height="56" loading="lazy"><span>Cereales con gluten</span></li>
+                    <li id="leyenda-crustaceos" class="leyenda-item"><img src="img/carta/alergenos/crustaceos.png" alt="" width="56" height="56" loading="lazy"><span>Crustáceos</span></li>
+                    <li id="leyenda-huevo" class="leyenda-item"><img src="img/carta/alergenos/huevo.png" alt="" width="56" height="56" loading="lazy"><span>Huevos</span></li>
+                    <li id="leyenda-pescado" class="leyenda-item"><img src="img/carta/alergenos/pescado.png" alt="" width="56" height="56" loading="lazy"><span>Pescado</span></li>
+                    <li id="leyenda-cacahuetes" class="leyenda-item"><img src="img/carta/alergenos/cacahuetes.png" alt="" width="56" height="56" loading="lazy"><span>Cacahuetes</span></li>
+                    <li id="leyenda-soja" class="leyenda-item"><img src="img/carta/alergenos/soja.png" alt="" width="56" height="56" loading="lazy"><span>Soja</span></li>
+                    <li id="leyenda-lacteos" class="leyenda-item"><img src="img/carta/alergenos/lacteos.png" alt="" width="56" height="56" loading="lazy"><span>Lácteos</span></li>
+                    <li id="leyenda-frutos_secos" class="leyenda-item"><img src="img/carta/alergenos/frutos_secos.png" alt="" width="56" height="56" loading="lazy"><span>Frutos de cáscara</span></li>
+                    <li id="leyenda-apio" class="leyenda-item"><img src="img/carta/alergenos/apio.png" alt="" width="56" height="56" loading="lazy"><span>Apio</span></li>
+                    <li id="leyenda-mostaza" class="leyenda-item"><img src="img/carta/alergenos/mostaza.png" alt="" width="56" height="56" loading="lazy"><span>Mostaza</span></li>
+                    <li id="leyenda-sesamo" class="leyenda-item"><img src="img/carta/alergenos/sesamo.png" alt="" width="56" height="56" loading="lazy"><span>Sésamo</span></li>
+                    <li id="leyenda-sulfitos" class="leyenda-item"><img src="img/carta/alergenos/sulfitos.png" alt="" width="56" height="56" loading="lazy"><span>Dióxido de azufre y sulfitos</span></li>
+                    <li id="leyenda-altramuces" class="leyenda-item"><img src="img/carta/alergenos/altramuces.png" alt="" width="56" height="56" loading="lazy"><span>Altramuces</span></li>
+                    <li id="leyenda-moluscos" class="leyenda-item"><img src="img/carta/alergenos/moluscos.png" alt="" width="56" height="56" loading="lazy"><span>Moluscos</span></li>
+                </ul>
+                <div id="leyenda-etiquetas" class="revelar">
+                    <h3 id="titulo-leyenda-etiquetas">Etiquetas de los platos</h3>
+                    <dl id="lista-etiquetas">
+                        <div id="leyenda-vegano"><dt><span class="etiqueta etiqueta--vegano"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 3C10 3 4 8 4 15c0 2 .5 3.6 1.3 5L4 21.3 5.4 22.7l1.4-1.4C8 22 9.5 22.4 11 22.4 18 22.4 21 15 20 3zM8.3 17.7c2-4 5-6.8 8.7-8.7-3 2.6-5.6 5.5-7.4 9.4z"/></svg>Vegano</span></dt><dd>Sin ningún ingrediente de origen animal. Va junto a los alérgenos, abajo en la tarjeta.</dd></div>
+                        <div id="leyenda-picante"><dt><span class="etiqueta etiqueta--picante etiqueta--sobre-claro"><span class="guindilla encendida"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.6 7.2c2.9-.4 4.9 1.6 4.6 4.6-.5 5.3-6.3 10-14.2 10.2 4.6-2.4 7.4-6.6 7.6-11.5.1-1.8.8-3.1 2-3.3z"/><path class="rabito" d="M13.4 7.6c-.3-2.4.7-4.4 3-5.6l.8 1.4c-1.6.9-2.3 2.2-2 4z"/></svg></span><span class="guindilla encendida"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.6 7.2c2.9-.4 4.9 1.6 4.6 4.6-.5 5.3-6.3 10-14.2 10.2 4.6-2.4 7.4-6.6 7.6-11.5.1-1.8.8-3.1 2-3.3z"/><path class="rabito" d="M13.4 7.6c-.3-2.4.7-4.4 3-5.6l.8 1.4c-1.6.9-2.3 2.2-2 4z"/></svg></span><span class="guindilla"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.6 7.2c2.9-.4 4.9 1.6 4.6 4.6-.5 5.3-6.3 10-14.2 10.2 4.6-2.4 7.4-6.6 7.6-11.5.1-1.8.8-3.1 2-3.3z"/><path class="rabito" d="M13.4 7.6c-.3-2.4.7-4.4 3-5.6l.8 1.4c-1.6.9-2.3 2.2-2 4z"/></svg></span></span></dt><dd>Nivel de picante de 1 a 3 (guindillas encendidas). Siempre en la esquina superior derecha de la foto.</dd></div>
+                        <div id="leyenda-chef"><dt><span class="etiqueta etiqueta--chef"><img src="img/iconos/cuenco.svg" alt="" width="18" height="18">Recomendado del chef</span></dt><dd>El plato que Hiroshi pediría. Esquina superior izquierda de la foto.</dd></div>
+                    </dl>
+                </div>
+            </div>
+        </section>
+
         <!-- Nota final -->
-        <section id="nota-carta" class="seccion" aria-labelledby="titulo-nota-carta">
+        <section id="nota-carta" class="seccion seccion--clara" aria-labelledby="titulo-nota-carta">
             <div id="nota-carta-contenido" class="contenedor revelar">
                 <h2 id="titulo-nota-carta">¿Alergias o intolerancias?</h2>
                 <p>Dínoslo al reservar o al llegar a la barra. Tenemos la información completa de los 14 alérgenos de cada plato a tu disposición. Precios con IVA incluido.</p>

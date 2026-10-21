@@ -163,7 +163,7 @@
 
                     <!-- Confirmación (se muestra al enviar correctamente) -->
                     <div id="mensaje-enviado" role="status" tabindex="-1" hidden>
-                        <p class="icono-ok" aria-hidden="true">✓</p>
+                        <p class="icono-ok" aria-hidden="true"><img src="img/iconos/cuenco.svg" alt="" width="44" height="44"></p>
                         <h3 id="titulo-enviado">¡Gracias! Hemos recibido tu mensaje</h3>
                         <p id="texto-enviado"></p>
                         <button id="nuevo-mensaje" type="button" class="boton boton--linea-oscura">Enviar otro mensaje</button>
@@ -203,12 +203,36 @@
                 <div id="mapa-texto" class="revelar">
                     <p class="antetitulo"><span lang="ja">地図</span> Cómo llegar</p>
                     <h2 id="titulo-mapa">En pleno casco histórico</h2>
-                    <p>Estamos en la Rúa da Raíña, a tres minutos andando de la Praza do Obradoiro. La zona es peatonal: si vienes en coche, lo más cómodo es dejarlo en uno de los aparcamientos de las afueras del casco viejo y subir caminando.</p>
-                    <a class="boton boton--linea" href="https://www.google.com/maps/search/?api=1&amp;query=R%C3%BAa+da+Ra%C3%AD%C3%B1a+Santiago+de+Compostela" target="_blank" rel="noopener">Abrir en Google Maps</a>
+                    <p>Estamos en la Rúa da Raíña, en pleno casco viejo. La zona es peatonal, así que lo más cómodo es llegar andando.</p>
+                    <ul id="guia-llegar" class="lista-tematica lista-tematica--naruto">
+                        <li><strong>A pie:</strong> unos 3 minutos desde la Praza do Obradoiro.</li>
+                        <li><strong>En bus urbano:</strong> bájate en la Praza de Galicia y sube andando unos 7 minutos.</li>
+                        <li><strong>En coche:</strong> déjalo en un aparcamiento fuera del casco histórico, como el de Xoán XXIII o el de la Praza de Galicia.</li>
+                    </ul>
+                    <div id="desde-donde" aria-live="polite">
+                        <button type="button" id="boton-ubicacion" class="boton boton--rojo" data-tooltip="Te pedirá permiso para usar tu ubicación">¿A cuánto estoy?</button>
+                        <p id="resultado-ubicacion">Calcula la distancia desde donde estés ahora o pide la ruta a Google Maps.</p>
+                    </div>
+                    <div id="botones-mapa">
+                        <a id="enlace-ruta" class="boton boton--linea" href="https://www.google.com/maps/dir/?api=1&amp;destination=R%C3%BAa+da+Ra%C3%AD%C3%B1a+18%2C+Santiago+de+Compostela" target="_blank" rel="noopener" data-tooltip="Google Maps usa tu ubicación como punto de salida">Cómo llegar desde donde estás</a>
+                        <a id="enlace-mapa-google" href="https://www.google.com/maps/search/?api=1&amp;query=R%C3%BAa+da+Ra%C3%AD%C3%B1a+Santiago+de+Compostela" target="_blank" rel="noopener">Abrir en Google Maps ↗</a>
+                    </div>
                 </div>
-                <div id="mapa-marco" class="revelar" data-retraso="1">
-                    <iframe id="mapa-google" title="Mapa de la ubicación de Nami Ramen en la Rúa da Raíña, Santiago de Compostela" src="https://maps.google.com/maps?q=R%C3%BAa%20da%20Ra%C3%AD%C3%B1a%2C%20Santiago%20de%20Compostela&amp;z=17&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
-                </div>
+                <figure id="mapa-marco" class="revelar" data-retraso="1">
+                    <div id="noren-mapa">
+                        <img src="img/emblema.svg" alt="" width="42" height="42">
+                        <p><strong>Nami Ramen</strong><span>Rúa da Raíña, 18 · Santiago</span></p>
+                        <span id="estado-mapa"></span>
+                        <span class="kanji-noren" lang="ja" aria-hidden="true">地図</span>
+                    </div>
+                    <div id="mapa-ventana">
+                        <iframe id="mapa-google" title="Mapa de la ubicación de Nami Ramen en la Rúa da Raíña, Santiago de Compostela" src="https://maps.google.com/maps?q=R%C3%BAa%20da%20Ra%C3%AD%C3%B1a%2C%20Santiago%20de%20Compostela&amp;z=17&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+                    </div>
+                    <figcaption id="pie-mapa">
+                        <span>Mapa en los colores de Nami.</span>
+                        <button type="button" id="boton-color-mapa" class="boton-mapa" aria-pressed="false" data-tooltip="Muestra el mapa con sus colores originales">Ver en color</button>
+                    </figcaption>
+                </figure>
             </div>
         </section>
 
@@ -301,5 +325,6 @@
 
     <script src="js/comun.js"></script>
     <script src="js/contacto.js"></script>
+    <script src="js/desplegable.js"></script>
 </body>
 </html>
